@@ -18,8 +18,8 @@ class Songs extends Controller
     public function index()
     {
         // getting all songs and amount of songs
-        $songs = $this->model->getAllSongs();
-        $amount_of_songs = $this->model->getAmountOfSongs();
+        $songs = $this->song_model->getAllSongs();
+        $amount_of_songs = $this->song_model->getAmountOfSongs();
 
        // load views. within the views we can echo out $songs and $amount_of_songs easily
         require APP . 'view/_templates/header.php';
@@ -39,8 +39,8 @@ class Songs extends Controller
     {
         // if we have POST data to create a new song entry
         if (isset($_POST["submit_add_song"])) {
-            // do addSong() in model/model.php
-            $this->model->addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
+            // do addSong() in model/song_model.php
+            $this->song_model->addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
         }
 
         // where to go after song has been added
@@ -60,8 +60,8 @@ class Songs extends Controller
     {
         // if we have an id of a song that should be deleted
         if (isset($song_id)) {
-            // do deleteSong() in model/model.php
-            $this->model->deleteSong($song_id);
+            // do deleteSong() in model/song_model.php
+            $this->song_model->deleteSong($song_id);
         }
 
         // where to go after song has been deleted
@@ -77,8 +77,8 @@ class Songs extends Controller
     {
         // if we have an id of a song that should be edited
         if (isset($song_id)) {
-            // do getSong() in model/model.php
-            $song = $this->model->getSong($song_id);
+            // do getSong() in model/song_model.php
+            $song = $this->song_model->getSong($song_id);
 
             // in a real application we would also check if this db entry exists and therefore show the result or
             // redirect the user to an error page or similar
@@ -105,8 +105,8 @@ class Songs extends Controller
     {
         // if we have POST data to create a new song entry
         if (isset($_POST["submit_update_song"])) {
-            // do updateSong() from model/model.php
-            $this->model->updateSong($_POST["artist"], $_POST["track"],  $_POST["link"], $_POST['song_id']);
+            // do updateSong() from model/song_model.php
+            $this->song_model->updateSong($_POST["artist"], $_POST["track"],  $_POST["link"], $_POST['song_id']);
         }
 
         // where to go after song has been added
@@ -119,7 +119,7 @@ class Songs extends Controller
      */
     public function ajaxGetStats()
     {
-        $amount_of_songs = $this->model->getAmountOfSongs();
+        $amount_of_songs = $this->song_model->getAmountOfSongs();
 
         // simply echo out something. A supersimple API would be possible by echoing JSON here
         echo $amount_of_songs;
