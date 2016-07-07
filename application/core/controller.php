@@ -8,9 +8,10 @@ class Controller
     public $db = null;
 
     /**
-     * @var null Model
+     * Models
      */
     public $song_model = null;
+    public $book_model = null;
 
     /**
      * Whenever controller is created, open a database connection too and load "the model".
@@ -45,8 +46,10 @@ class Controller
     {
         require APP . 'model/model.php';
         require APP . 'model/song.php';
+        require APP . 'model/book.php';
         
         // create new "model" (and pass the database connection)
         $this->song_model = new Song($this->db);
+        $this->book_model = new Book($this->db);
     }
 }

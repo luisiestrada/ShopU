@@ -52,7 +52,7 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
  */
 define('DB_TYPE', 'mysql');
 define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'mini');
-define('DB_USER', 'mini');
-define('DB_PASS', 'mini');
+define('DB_NAME', 'su16g03');
+define('DB_USER', 'su16g03');
+define('DB_PASS', 'hodor');
 define('DB_CHARSET', 'utf8');

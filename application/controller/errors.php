@@ -8,7 +8,7 @@
  * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
  *
  */
-class Error extends Controller
+class Errors extends Controller
 {
     /**
      * PAGE: index
@@ -18,7 +18,7 @@ class Error extends Controller
     {
         // load views
         require APP . 'view/_templates/header.php';
-        require APP . 'view/error/index.php';
+        require APP . 'view/errors/index.php';
         require APP . 'view/_templates/footer.php';
     }
 }
