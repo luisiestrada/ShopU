@@ -20,7 +20,7 @@
 <body>
     <!-- logo -->
     <div class="logo">
-        <img src="<?php echo URL; ?>img/shopu-logo.png" alt="demo image"
+        <img src="<?php echo URL; ?>img/shopu-logo.png" alt="ShopU logo"
              style="height:100px;"/>
     </div>
 
