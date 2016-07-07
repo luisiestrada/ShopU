@@ -1,36 +1,8 @@
 <div class="container">
-    <h2>You are in the View: application/view/book/index.php (everything in this box comes from that file)</h2>
-    <!-- add book form -->
-    <div class="box">
-        <h3>Add a book</h3>
-        <form action="<?php echo URL; ?>books/addbook" method="POST">
-            <label>Title</label>
-            <input type="text" name="title" value="" required />
-            <label>Author</label>
-            <input type="text" name="author" value="" required />
-            <label>Publisher</label>
-            <input type="text" name="publisher" value="" required />
-            <label>Genre</label>
-            <input type="text" name="genre" value="" required />
-            <label>Publication Year</label>
-            <input type="text" name="year" value="" />
-            <label>Summary</label>
-            <input type="text" name="summary" value="" />
-            <input type="submit" name="submit_add_book" value="Submit" />
-        </form>
-    </div>
     <!-- main content output -->
+    Search results: <?php echo $amount_of_books; ?>
     <div class="box">
-        <h3>Amount of books (data from second model)</h3>
-        <div>
-            <?php echo $amount_of_books; ?>
-        </div>
-        <h3>Amount of books (via AJAX)</h3>
-        <div>
-            <button id="javascript-ajax-button">Click here to get the amount of books via Ajax (will be displayed in #javascript-ajax-result-box)</button>
-            <div id="javascript-ajax-result-box"></div>
-        </div>
-        <h3>List of books (data from first model)</h3>
+        <h3>List of books</h3>
         <table>
             <thead style="background-color: #ddd; font-weight: bold;">
             <tr>
