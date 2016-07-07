@@ -33,10 +33,10 @@
                     
     <div class="container">
         <form action="<?php echo URL; ?>search/form" method="POST">
-          Search:<br>
-          <input type="text" name="searchbar">
-          <br><br>
-          <input type="submit" name="submit_search" value="Submit">
+            Search:<br>
+            <input type="text" name="searchbar">
+            <br><br>
+            <input type="submit" name="submit_search" value="Submit">
         </form>
     </div>
     
