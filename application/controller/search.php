@@ -20,6 +20,8 @@ class Search extends Controller
                 require APP . 'view/errors/notfound.php';
                 require APP . 'view/_templates/footer.php';
             }
+        } else {
+            header('location: ' . URL . 'home/index');
         }
     }
 }
