@@ -20,7 +20,6 @@ class Book extends Model
      */
     public function addBook($title, $author, $publisher, $genre, $year, $summary)
     {
-        echo "derp";
         $sql = "INSERT INTO book (title, author, publisher, genre, year, summary) "
             . "VALUES (:title, :author, :publisher, :genre, :year, :summary)";
         $query = $this->db->prepare($sql);
