@@ -114,4 +114,36 @@ class Song extends Model
         // fetch() is the PDO method that get exactly one result
         return $query->fetch()->amount_of_songs;
     }
+    
+    /**
+     * Get all items in song table containing a certain keyword
+     * @param type $value - keyword to look for
+     */
+    public function getAllSongsContaining($value)
+    {
+        $sql = "SELECT id, artist, track, link FROM song "
+                . "WHERE artist LIKE '%" .$value. "%' "
+                . "OR track LIKE '%" .$value. "%' ";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+
+        // fetchAll() is the PDO method that gets all result rows
+        return $query->fetchAll();
+    }
+    
+    /**
+     * Get number of items in song table containing a certain keyword
+     * @param type $value - keyword to look for
+     */
+    public function getAmountOfSongsContaining($value)
+    {
+        $sql = "SELECT COUNT(id) AS amount_of_songs FROM song "
+                . "WHERE artist LIKE '%" .$value. "%' "
+                . "OR track LIKE '%" .$value. "%' ";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+
+        // fetch() is the PDO method that get exactly one result
+        return $query->fetch()->amount_of_songs;
+    }
 }

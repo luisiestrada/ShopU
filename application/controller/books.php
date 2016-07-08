@@ -15,7 +15,7 @@ class Books extends Controller
         $books = $this->book_model->getAllBooks();
         $amount_of_books = $this->book_model->getAmountOfBooks();
 
-       // load views. within the views we can echo out $books and $amount_of_books easily
+        // load views. within the views we can echo out $books and $amount_of_books easily
         require APP . 'view/_templates/header.php';
         require APP . 'view/books/index.php';
         require APP . 'view/_templates/footer.php';

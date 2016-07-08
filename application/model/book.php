@@ -81,4 +81,41 @@ class Book extends Model
         // fetch() is the PDO method that get exactly one result
         return $query->fetch()->amount_of_books;
     }
+    
+    /**
+     * Get all items in book table containing a certain keyword
+     * @param type $value - keyword to look for
+     */
+    public function getAllBooksContaining($value)
+    {
+        $sql = "SELECT id, title, author, publisher, genre, year, summary FROM book "
+                . "WHERE title LIKE '%" .$value. "%' "
+                . "OR author LIKE '%" .$value. "%' "
+                . "OR publisher LIKE '%" .$value. "%' "
+                . "OR genre LIKE '%" .$value. "%' "
+                . "OR summary LIKE '%" .$value. "%' ";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+
+        // fetchAll() is the PDO method that gets all result rows
+        return $query->fetchAll();
+    }
+    
+    /**
+     * Get number of items in book table containing a certain keyword
+     * @param type $value - keyword to look for
+     */
+    public function getAmountOfBooksContaining($value)
+    {
+        $sql = "SELECT COUNT(id) AS amount_of_books FROM book "
+                . "WHERE title LIKE '%" .$value. "%' "
+                . "OR author LIKE '%" .$value. "%' "
+                . "OR publisher LIKE '%" .$value. "%' "
+                . "OR genre LIKE '%" .$value. "%' "
+                . "OR summary LIKE '%" .$value. "%' ";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        
+        return $query->fetch()->amount_of_books;
+    }
 }
