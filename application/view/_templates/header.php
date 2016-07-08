@@ -21,7 +21,7 @@
     <!-- logo -->
     <div class="logo">
         <img src="<?php echo URL; ?>img/shopu-logo.png" alt="ShopU logo"
-             style="height:100px;"/>
+             style="height:100px"/>
     </div>
 
     <!-- navigation -->
@@ -30,13 +30,24 @@
         <a href="<?php echo URL; ?>home/exampleone">subpage</a>
         <a href="<?php echo URL; ?>home/exampletwo">subpage 2</a>
     </div>
-                    
-    <div class="container">
+    
+    <br><br>
+    <div class="container-fluid" align="center">
         <form action="<?php echo URL; ?>search/form" method="POST">
-            Search:<br>
-            <input type="text" name="searchbar">
-            <br><br>
-            <input type="submit" name="submit_search" value="Submit">
+            <div class="input-group col-md-10">
+                <span class="input-group-btn">
+                    <select name="category" id="category" class="btn btn-warning btn-lg">
+                        <option value="book">Books</option>
+                        <option value="song">Songs</option>
+                    </select>
+                </span>
+                <input type="text" name="searchbar" class="form-control input-lg" placeholder="Search..." />
+                <span class="input-group-btn">
+                    <button class="btn btn-warning btn-lg" type="submit" name="submit_search">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </span>
+            </div>
         </form>
     </div>
     
