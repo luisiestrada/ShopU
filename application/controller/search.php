@@ -14,7 +14,7 @@ class Search extends Controller
         if (isset($_POST["submit_search"])) {
 
             $category = $_POST['category'];
-            $input = $_POST['searchbar'];
+            $input = trim($_POST['searchbar']);
             
             switch($category) {
                 case 'book': Search::book($input); break;
