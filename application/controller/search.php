@@ -23,7 +23,7 @@ class Search extends Controller
             
             // check what category on the searchbar is chosen by user
             if ($category == 'All') {
-                Search::all($input);
+                Search::all($input, $category);
             } else {
                 Search::specific_category($input, $category);
             }
@@ -35,10 +35,11 @@ class Search extends Controller
     }
     
     /**
-     * This method deals with searches within the 'all' category
-     * @param type $input - user input
+     * 
+     * @param type $input
+     * @param type $category - category 'all' on searchbar (used by views)
      */
-    public function all($input) {        
+    public function all($input, $category) {        
         $items = $this->item_model->getAllItemsContaining($input);
 
         if ($items == null) { // if no results, load notfound page
