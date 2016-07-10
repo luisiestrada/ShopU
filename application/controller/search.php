@@ -16,19 +16,18 @@ class Search extends Controller
             $category = $_POST['category'];
             $input = trim($_POST['searchbar']);
             
+            // redirect to homepage if user types whitespace only
             if ($input == "") {
                 header('location: ' . URL . 'home/index');
             }
             
-            switch($category) {
-                case 'all': Search::all($input); break;
-                case 'book': Search::book($input); break;
-                case 'song': Search::song($input); break;
-                default:
-                    require APP . 'view/_templates/header.php';
-                    require APP . 'view/errors/notfound.php';
-                    require APP . 'view/_templates/footer.php';
+            // check what category on the searchbar is chosen by user
+            if ($category == 'All') {
+                Search::all($input);
+            } else {
+                Search::specific_category($input, $category);
             }
+            
         } else {
             // go to homepage if user visits search/form manually
             header('location: ' . URL . 'home/index');
@@ -40,10 +39,9 @@ class Search extends Controller
      * @param type $input - user input
      */
     public function all($input) {        
-        $books = $this->book_model->getAllBooksContaining($input);
-        $songs = $this->song_model->getAllSongsContaining($input);
+        $items = $this->item_model->getAllItemsContaining($input);
 
-        if ($books == null && $songs == null) { // if no results, load notfound page
+        if ($items == null) { // if no results, load notfound page
             require APP . 'view/_templates/header.php';
             require APP . 'view/errors/notfound.php';
             require APP . 'view/_templates/footer.php';
@@ -55,39 +53,21 @@ class Search extends Controller
     }
     
     /**
-     * This method deals with searches within the 'book' category
+     * This method deals with searches within every other category
      * @param type $input - user input
+     * @param type $category - category on searchbar
      */
-    public function book($input) {
-        $books = $this->book_model->getAllBooksContaining($input);
-        $amount_of_books = $this->book_model->getAmountOfBooksContaining($input);
+    public function specific_category($input, $category)
+    {
+        $items = $this->item_model->getAllItemsContainingInCategory($input, $category);
 
-        if ($books == null) { // if no results, load notfound page
+        if ($items == null) { // if no results, load notfound page
             require APP . 'view/_templates/header.php';
             require APP . 'view/errors/notfound.php';
             require APP . 'view/_templates/footer.php';
-        } else { // if results, load books found
+        } else { // if results, load items found
             require APP . 'view/_templates/header.php';
-            require APP . 'view/books/index.php';
-            require APP . 'view/_templates/footer.php';
-        }
-    }
-    
-    /**
-     * This method deals with searches within the 'song' category
-     * @param type $input - user input
-     */
-    public function song($input) {
-        $songs = $this->song_model->getAllSongsContaining($input);
-        $amount_of_songs = $this->song_model->getAmountOfSongsContaining($input);
-
-        if ($songs == null) { // if no results, load notfound page
-            require APP . 'view/_templates/header.php';
-            require APP . 'view/errors/notfound.php';
-            require APP . 'view/_templates/footer.php';
-        } else { // if results, load songs found
-            require APP . 'view/_templates/header.php';
-            require APP . 'view/songs/index.php';
+            require APP . 'view/items/index.php';
             require APP . 'view/_templates/footer.php';
         }
     }
