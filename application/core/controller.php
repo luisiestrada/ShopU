@@ -12,6 +12,8 @@ class Controller
      */
     public $song_model = null;
     public $book_model = null;
+    
+    public $idem_model = null;
 
     /**
      * Whenever controller is created, open a database connection too and load "the model".
@@ -48,8 +50,12 @@ class Controller
         require APP . 'model/song.php';
         require APP . 'model/book.php';
         
+        require APP . 'model/item.php';
+        
         // create new "model" (and pass the database connection)
         $this->song_model = new Song($this->db);
         $this->book_model = new Book($this->db);
+        
+        $this->item_model = new Item($this->db);
     }
 }
