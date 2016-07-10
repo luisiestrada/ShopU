@@ -2,6 +2,13 @@
 
 class Item extends Model
 {
+    $itemName;
+    $itemId;
+    $sellerId;
+    $price;
+    $details;
+    $category;
+    
     /**
      * Get all items from database
      */
