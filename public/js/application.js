@@ -1,5 +1,17 @@
-$(function() {
+// apply DataTables to tables
+$(document).ready(function(){
+    $('.dataTables').DataTable({
+        "pagingType": "simple_numbers", // pagination buttons
+        "aaSorting": [], // initial sort (empty: none)
+        "columnDefs": [ {
+            "targets": [0, -1, -2], // these columns are unorderable
+            "orderable": false
+        } ],
+        "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]]
+    });
+});
 
+$(function() {
     // just a super-simple JS demo
 
     var demoHeaderBox;
