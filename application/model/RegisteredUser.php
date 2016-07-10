@@ -2,11 +2,11 @@
 
 class RegisteredUser extends Model
 {
-    $username;
-    $emailAddress;
-    $studentId;
-    $profilePic;
-    $password;
+    public $username;
+    public $emailAddress;
+    public $studentId;
+    public $profilePic;
+    public $password;
 
     /**
      * Update email address
