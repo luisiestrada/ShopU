@@ -2,10 +2,10 @@
 
 class Admin extends Model
 {
-    $username;
-    $emailAddress;
-    $id;
-    $password;
+    public $username;
+    public $emailAddress;
+    public $id;
+    public $password;
 
     /**
      * Update email address
