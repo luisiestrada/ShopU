@@ -19,7 +19,7 @@ class Item extends Model
      * Get all items containing a certain keyword
      * @param type $value - keyword to look for
      */
-    public function getAllItemsContaining($value)
+    public function getItemsContaining($value)
     {
         $sql = "SELECT id, title, price, category, description, keywords FROM item "
                 . "WHERE title LIKE '%" .$value. "%' "
@@ -38,7 +38,7 @@ class Item extends Model
      * @param type $value - keyword to look for
      * @param type $category - category to search through
      */
-    public function getAllItemsContainingInCategory($value, $category)
+    public function getItemsContainingInCategory($value, $category)
     {
         $sql = "SELECT id, title, price, category, description, keywords FROM item "
                 . "WHERE category = '" .$category. "' "

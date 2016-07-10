@@ -40,7 +40,7 @@ class Search extends Controller
      * @param type $category - category 'all' on searchbar (used by views)
      */
     public function all($input, $category) {        
-        $items = $this->item_model->getAllItemsContaining($input);
+        $items = $this->item_model->getItemsContaining($input);
 
         if ($items == null) { // if no results, load notfound page
             require APP . 'view/_templates/header.php';
@@ -60,7 +60,7 @@ class Search extends Controller
      */
     public function specific_category($input, $category)
     {
-        $items = $this->item_model->getAllItemsContainingInCategory($input, $category);
+        $items = $this->item_model->getItemsContainingInCategory($input, $category);
 
         if ($items == null) { // if no results, load notfound page
             require APP . 'view/_templates/header.php';
