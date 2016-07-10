@@ -16,7 +16,12 @@ class Search extends Controller
             $category = $_POST['category'];
             $input = trim($_POST['searchbar']);
             
+            if ($input == "") {
+                header('location: ' . URL . 'home/index');
+            }
+            
             switch($category) {
+                case 'all': Search::all($input); break;
                 case 'book': Search::book($input); break;
                 case 'song': Search::song($input); break;
                 default:
@@ -31,7 +36,26 @@ class Search extends Controller
     }
     
     /**
-     * This method deals with searches within the book category
+     * This method deals with searches within the 'all' category
+     * @param type $input - user input
+     */
+    public function all($input) {        
+        $books = $this->book_model->getAllBooksContaining($input);
+        $songs = $this->song_model->getAllSongsContaining($input);
+
+        if ($books == null && $songs == null) { // if no results, load notfound page
+            require APP . 'view/_templates/header.php';
+            require APP . 'view/errors/notfound.php';
+            require APP . 'view/_templates/footer.php';
+        } else { // if results, load items found
+            require APP . 'view/_templates/header.php';
+            require APP . 'view/items/index.php';
+            require APP . 'view/_templates/footer.php';
+        }
+    }
+    
+    /**
+     * This method deals with searches within the 'book' category
      * @param type $input - user input
      */
     public function book($input) {
@@ -50,7 +74,7 @@ class Search extends Controller
     }
     
     /**
-     * This method deals with searches within the song category
+     * This method deals with searches within the 'song' category
      * @param type $input - user input
      */
     public function song($input) {
