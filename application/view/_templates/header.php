@@ -16,11 +16,14 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css"/>
+    
 </head>
 <body>
     <!-- logo -->
     <div class="logo">
-        <img src="<?php echo URL; ?>img/shopu-logo.png" alt="ShopU logo"
+        <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"
              style="height:100px"/>
     </div>
 
@@ -37,11 +40,12 @@
             <div class="input-group col-md-10">
                 <span class="input-group-btn">
                     <select name="category" id="category" class="btn btn-warning btn-lg">
+                        <option value="all">All</option>
                         <option value="book">Books</option>
                         <option value="song">Songs</option>
                     </select>
                 </span>
-                <input type="text" name="searchbar" class="form-control input-lg" placeholder="Search..." />
+                <input type="text" name="searchbar" class="form-control input-lg" placeholder="Search..." autocomplete="off"/>
                 <span class="input-group-btn">
                     <button class="btn btn-warning btn-lg" type="submit" name="submit_search">
                         <i class="glyphicon glyphicon-search"></i>
