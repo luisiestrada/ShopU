@@ -3,7 +3,7 @@
     Search results: <?php echo $amount_of_books; ?>
     <div class="box">
         <h3>List of books</h3>
-        <table id="myTable" class="display responsive no-wrap" width="100%">
+        <table class="dataTables display responsive no-wrap" width="100%">
             <thead style="background-color: #ddd; font-weight: bold;">
             <tr>
                 <td>Image</td>
