@@ -41,8 +41,10 @@
                 <span class="input-group-btn">
                     <select name="category" id="category" class="btn btn-warning btn-lg">
                         <option value="All">All</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothes">Clothes</option>
                         <option value="Books">Books</option>
-                        <option value="Songs">Songs</option>
                     </select>
                 </span>
                 <input type="text" name="searchbar" class="form-control input-lg" placeholder="Search..." autocomplete="off"/>
