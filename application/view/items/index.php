@@ -33,3 +33,5 @@
         </table>
     </div>
 </div>
+
+<?php if ($category != null) echo("<script>document.getElementById('category').value = '" .$category. "';</script>"); ?>

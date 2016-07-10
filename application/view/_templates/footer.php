@@ -7,9 +7,6 @@
         var url = "<?php echo URL; ?>";
     </script>
     
-    <!-- change search bar category to be that of category chosen before submitting search -->
-    <?php if ($category != null) echo("<script>$('#category').val('" .$category. "');</script>"); ?>
-    
     <!-- our JavaScript -->
     <script src="<?php echo URL; ?>js/application.js"></script>
     
