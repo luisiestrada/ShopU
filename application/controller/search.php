@@ -21,12 +21,7 @@ class Search extends Controller
                 header('location: ' . URL . 'home/index');
             }
             
-            // check what category on the searchbar is chosen by user
-            if ($category == 'All') {
-                Search::all($input, $category);
-            } else {
-                Search::specific_category($input, $category);
-            }
+            Search::searchCategory($input, $category);
             
         } else {
             // go to homepage if user visits search/form manually
@@ -35,32 +30,17 @@ class Search extends Controller
     }
     
     /**
-     * 
-     * @param type $input
-     * @param type $category - category 'all' on searchbar (used by views)
-     */
-    public function all($input, $category) {        
-        $items = $this->item_model->getItemsContaining($input);
-
-        if ($items == null) { // if no results, load notfound page
-            require APP . 'view/_templates/header.php';
-            require APP . 'view/errors/notfound.php';
-            require APP . 'view/_templates/footer.php';
-        } else { // if results, load items found
-            require APP . 'view/_templates/header.php';
-            require APP . 'view/items/index.php';
-            require APP . 'view/_templates/footer.php';
-        }
-    }
-    
-    /**
-     * This method deals with searches within every other category
+     * This method deals with searches made within a category
      * @param type $input - user input
      * @param type $category - category on searchbar
      */
-    public function specific_category($input, $category)
+    public function searchCategory($input, $category)
     {
-        $items = $this->item_model->getItemsContainingInCategory($input, $category);
+        if ($category == 'All') {
+            $items = $this->item_model->getItemsContaining($input, $category);
+        } else {
+            $items = $this->item_model->getItemsContainingInCategory($input, $category);
+        }
 
         if ($items == null) { // if no results, load notfound page
             require APP . 'view/_templates/header.php';
