@@ -20,7 +20,7 @@ class Admin extends Model
      * Update password
      @param type $pwd - the new password
      */
-    public function updateEmail($pwd)
+    public function updatePassword($pwd)
     {
         $password = $pwd;
     }
