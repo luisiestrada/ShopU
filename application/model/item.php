@@ -59,4 +59,18 @@ class Item extends Model
         // fetchAll() is the PDO method that gets all result rows
         return $query->fetchAll();
     }
+    
+    /**
+     * Get simple "stats". This is just a simple demo to show
+     * how to use more than one model in a controller (see application/controller/items.php for more)
+     */
+    public function getAmountOfItems()
+    {
+        $sql = "SELECT COUNT(id) AS amount_of_items FROM item";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+
+        // fetch() is the PDO method that get exactly one result
+        return $query->fetch()->amount_of_items;
+    }
 }
