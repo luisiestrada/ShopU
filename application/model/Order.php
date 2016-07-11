@@ -2,12 +2,12 @@
 
 class Order extends Model
 {
-    $buyerId;
-    $sellerId;
-    $itemId;
-    $totalPrice;
-    $orderDate;
-    $details;
+    public $buyerId;
+    public $sellerId;
+    public $itemId;
+    public $totalPrice;
+    public $orderDate;
+    public $details;
 
     /**
      * Set the buyer for the order
