@@ -36,8 +36,8 @@
     
     <br><br>
     <div class="container-fluid" align="center">
-        <form action="<?php echo URL; ?>search/form" method="POST">
-            <div class="input-group col-md-10">
+        <form action="<?php echo URL; ?>search/index" method="GET">
+            <div class="input-group col-lg-10">
                 <span class="input-group-btn">
                     <select name="category" id="category" class="btn btn-warning btn-lg">
                         <option value="All">All</option>
