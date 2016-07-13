@@ -9,7 +9,7 @@ class Admin extends Model
 
     /**
      * Update email address
-     @param type $email - the new email address
+     * @param type $email - the new email address
      */
     public function updateEmail($email)
     {
@@ -18,7 +18,7 @@ class Admin extends Model
     
     /**
      * Update password
-     @param type $pwd - the new password
+     * @param type $pwd - the new password
      */
     public function updatePassword($pwd)
     {

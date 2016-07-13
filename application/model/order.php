@@ -11,7 +11,7 @@ class Order extends Model
 
     /**
      * Set the buyer for the order
-     @param type $buyer - the id of the registered user who is buyer
+     * @param type $buyer - the id of the registered user who is buyer
      */
     public function setBuyerId($buyer)
     {
@@ -21,14 +21,14 @@ class Order extends Model
     /**
      * Get the buyer for the order
      */
-    public function getBuyerId($buyer)
+    public function getBuyerId()
     {
         return $buyerId;
     }
     
     /**
      * Set the seller for the order
-     @param type $seller - the id of the registered user who is seller
+     * @param type $seller - the id of the registered user who is seller
      */
     public function setSellerId($seller)
     {
@@ -45,7 +45,7 @@ class Order extends Model
     
     /**
      * Set the item for the order
-     @param type $item - the id of the item to be sold
+     * @param type $item - the id of the item to be sold
      */
     public function setItemId($item)
     {
@@ -62,7 +62,7 @@ class Order extends Model
     
     /**
      * Set the price for the order
-     @param type $price - the total dollar amount of the order
+     * @param type $price - the total dollar amount of the order
      */
     public function setPrice($price)
     {
@@ -79,7 +79,7 @@ class Order extends Model
     
     /**
      * Set the date for the order
-     @param type $date - the date of the order
+     * @param type $date - the date of the order
      */
     public function setDate($date)
     {
