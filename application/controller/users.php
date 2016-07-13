@@ -17,7 +17,7 @@ class Users extends Controller
     }
     
     /**
-     * Go to view/users/signin.php
+     * Go to view/users/signup.php
      */
     public function signup()
     {
@@ -33,7 +33,7 @@ class Users extends Controller
     {
         if (isset($_POST['submit_add_user'])) {
             
-            $file = $_FILES["image"]["tmp_name"]; // reference to file
+            $file = $_FILES["image"]["tmp_name"]; // reference to file uploaded
             
             // if false, not an image or no image selected
             if ($file != null && getimagesize($file)) {
@@ -62,7 +62,7 @@ class Users extends Controller
     }
     
     /**
-     * This function proportionally resizes images down to thumbnails ~100x100px.
+     * This method proportionally resizes images down to thumbnails ~100x100px.
      * Didn't want to dive too deep into image processing, so I followed this reference:
      * http://stackoverflow.com/questions/18805497/php-resize-image-on-upload#answer-27213444
      */

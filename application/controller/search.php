@@ -32,7 +32,7 @@ class Search extends Controller
             }
             
             // interact with Item model to get the data, to see if there's a match
-            $items = $this->item_model->getItemsContaining($input, $category);    
+            $items = $this->item_model->getItemsContaining($input, $category);
             
             // load the views depending on whether or not there was a match
             if ($items == null) { // if no results, load notfound page

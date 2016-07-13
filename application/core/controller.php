@@ -44,7 +44,7 @@ class Controller
      */
     public function loadModel()
     {
-        require APP . 'model/model.php';        
+        require APP . 'model/model.php';
         require APP . 'model/item.php';
         require APP . 'model/registered_user.php';
         
