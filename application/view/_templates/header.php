@@ -30,7 +30,8 @@
     <!-- navigation -->
     <div class="navigation">
         <a href="<?php echo URL; ?>">home</a>
-        <a href="<?php echo URL; ?>search/index">All items</a>
+        <a href="<?php echo URL; ?>items/index">All items</a>
+        <a href="<?php echo URL; ?>items/sellitem">Sell item</a>
         <a href="<?php echo URL; ?>users/index">All users</a>
         <a href="<?php echo URL; ?>users/signup">Sign up</a>
     </div>
