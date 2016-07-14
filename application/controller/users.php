@@ -10,7 +10,7 @@ class Users extends Controller
      */
     public function index()
     {
-        $users = $this->user_model->getAllUsers();
+        $users = $this->db_model->getAllUsers();
         require APP . 'view/_templates/header.php';
         require APP . 'view/users/index.php';
         require APP . 'view/_templates/footer.php';
@@ -43,12 +43,12 @@ class Users extends Controller
                 $image = file_get_contents($file);
                 
                 // add user to database with image
-                $this->user_model->addUserWithImage($_POST["student_id"], $_POST["username"],
+                $this->db_model->addUserWithImage($_POST["student_id"], $_POST["username"],
                     $_POST["email"], $_POST["password"], $image);
         
             } else {
                 // add user to database without image (default image used instead)
-                $this->user_model->addUser($_POST["student_id"], $_POST["username"],
+                $this->db_model->addUser($_POST["student_id"], $_POST["username"],
                     $_POST["email"], $_POST["password"]);
             }
             

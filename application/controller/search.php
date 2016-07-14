@@ -10,7 +10,7 @@ class Search extends Controller
      */
     public function index()
     {
-        $items = $this->item_model->getAllItems();
+        $items = $this->db_model->getAllItems();
         require APP . 'view/_templates/header.php';
         require APP . 'view/items/index.php';
         require APP . 'view/_templates/footer.php';
@@ -32,7 +32,7 @@ class Search extends Controller
             }
             
             // interact with Item model to get the data, to see if there's a match
-            $items = $this->item_model->getItemsContaining($input, $category);
+            $items = $this->db_model->getItemsContaining($input, $category);
             
             // load the views depending on whether or not there was a match
             if ($items == null) { // if no results, load notfound page
