@@ -39,7 +39,7 @@ class Users extends Controller
             if ($file != null && getimagesize($file)) {
                 
                 // resize image (destroys original)
-                Users::resizeImage($file);
+                parent::resizeImage($file);
                 $image = file_get_contents($file);
                 
                 // add user to database with image
@@ -60,40 +60,4 @@ class Users extends Controller
             header('location: ' . URL . 'users/index');
         }
     }
-    
-    /**
-     * This method proportionally resizes images down to thumbnails ~100x100px.
-     * Didn't want to dive too deep into image processing, so I followed this reference:
-     * http://stackoverflow.com/questions/18805497/php-resize-image-on-upload#answer-27213444
-     */
-    private function resizeImage($file)
-    {
-        $maxDim = 100;
-        list($width, $height) = getimagesize( $file );
-        if ( $width > $maxDim || $height > $maxDim ) {
-            
-            $target_filename = $file;
-            $fn = $file;
-            
-            // find new proportional height & width
-            $size = getimagesize( $fn );
-            $ratio = $size[0] / $size[1]; // width/height
-            if( $ratio > 1) { // width > height
-                $width = $maxDim;
-                $height = $maxDim / $ratio;
-            } else { // width < height
-                $width = $maxDim * $ratio;
-                $height = $maxDim;
-            }
-            
-            // resize image with new height & width
-            $src = imagecreatefromstring( file_get_contents( $fn ) );
-            $dst = imagecreatetruecolor( $width, $height );
-            imagecopyresampled( $dst, $src, 0, 0, 0, 0, $width, $height, $size[0], $size[1] );
-            imagedestroy( $src );
-            imagepng( $dst, $target_filename );
-            imagedestroy( $dst );
-        }
-    }
-
 }
