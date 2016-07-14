@@ -6,7 +6,7 @@
             <label>Title</label>
             <input autofocus type="text" name="title" required autocomplete="off" value="text"/><br><br>
             <label>Price</label>
-            <input type="number" name="price" required autocomplete="off" value="10.00"/><br><br>
+            <input type="number" name="price" required autocomplete="off" value="10.00" step="0.01"/><br><br>
             <label>Category</label>
             <select name="category">
                 <option value="Furniture">Furniture</option>
