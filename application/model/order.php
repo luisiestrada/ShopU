@@ -1,6 +1,6 @@
 <?php
 
-class Order extends Model
+class Order
 {
     public $buyerId;
     public $sellerId;

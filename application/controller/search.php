@@ -6,14 +6,12 @@
 class Search extends Controller
 {    
     /**
-     * This method prints all items (for testing)
+     * Redirect to homepage if user visits /search or /search/index since view
+     * doesn't exist! Search controller is only meant to deal with searches.
      */
     public function index()
     {
-        $items = $this->item_model->getAllItems();
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/items/index.php';
-        require APP . 'view/_templates/footer.php';
+        header('location: ' . URL . 'home/index');
     }
     
     /**
@@ -22,17 +20,12 @@ class Search extends Controller
     public function form()
     {
         if (isset($_GET["submit_search"])) {
-
+            
             $input = trim($_GET['searchbar']);
             $category = $_GET['category'];
             
-            // redirect to homepage if user types whitespace only
-            if ($input == "") {
-                header('location: ' . URL . 'home/index');
-            }
-            
-            // interact with Item model to get the data, to see if there's a match
-            $items = $this->item_model->getItemsContaining($input, $category);
+            // interact with db model to get the data, to see if there's a match
+            $items = $this->db_model->getItemsContaining($input, $category);
             
             // load the views depending on whether or not there was a match
             if ($items == null) { // if no results, load notfound page
@@ -46,7 +39,8 @@ class Search extends Controller
             }
             
         } else {
-            // redirect to homepage if user visits /search or /search/index
+            // redirect to homepage if user visits /search/form without
+            // actually searching for an item through the search bar
             header('location: ' . URL . 'home/index');
         }
     }

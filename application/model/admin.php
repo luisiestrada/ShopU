@@ -1,6 +1,6 @@
 <?php
 
-class Admin extends Model
+class Admin
 {
     public $username;
     public $emailAddress;

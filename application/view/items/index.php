@@ -24,15 +24,24 @@
             <tbody>
             <?php foreach ($items as $item) { ?>
                 <tr>
-                    <td><img src="<?php echo URL; ?>img/demo-image.png" alt="image"></td>
+                    <td>
+                        <?php
+                            if (isset($item->image)) {
+                                echo ("<img src='data:image/jpeg;base64," . base64_encode($item->image)
+                                        . "' alt='Item image' style='height:100px; width: 100px'");
+                            } else {
+                                echo ("<img src='" . URL . "img/demo-image.png' alt='Item Image'");
+                            }
+                        ?>
+                    </td>
                     <td><?php if (isset($item->id)) echo htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($item->title)) echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($item->price)) echo htmlspecialchars($item->price, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($item->category)) echo htmlspecialchars($item->category, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($item->description)) echo htmlspecialchars($item->description, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($item->keywords)) echo htmlspecialchars($item->keywords, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><a href="<?php echo URL . 'items/deletebook/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
-                    <td><a href="<?php echo URL . 'items/editbook/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
+                    <td><a href="<?php echo URL . 'items/deleteitem/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
+                    <td><a href="<?php echo URL . 'items/edititem/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
                 </tr>
             <?php } ?>
             </tbody>
