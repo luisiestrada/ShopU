@@ -48,7 +48,7 @@ class Database
      */
     public function getAllItems()
     {
-        $sql = "SELECT id, title, price, category, description, keywords FROM item";
+        $sql = "SELECT id, title, price, category, description, keywords, image FROM item";
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -64,8 +64,8 @@ class Database
      */
     public function getItemsContaining($value, $category)
     {
-        // redirect to homepage if user types whitespace only
-        if ($input == "") {
+        // redirect to homepage if user typed whitespace only
+        if ($value == "") {
             header('location: ' . URL . 'home/index');
         }
         
@@ -98,6 +98,32 @@ class Database
 
         // fetch() is the PDO method that get exactly one result
         return $query->fetch()->amount_of_items;
+    }
+    
+    /**
+     * Add item to the db (without an image)
+     */
+    public function addItem($title, $price, $category, $description, $keywords)
+    {
+        $sql = "INSERT INTO item (title, price, category, description, keywords) "
+            . "VALUES (:title, :price, :category, :description, :keywords)";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':title' => $title, ':price' => $price, ':category' => $category,
+            ':description' => $description, ':keywords' => $keywords);
+        $query->execute($parameters);
+    }
+    
+    /**
+     * Add item to the db with image
+     */
+    public function addItemWithImage($title, $price, $category, $description, $keywords, $image)
+    {
+        $sql = "INSERT INTO item (title, price, category, description, keywords, image) "
+            . "VALUES (:title, :price, :category, :description, :keywords, :image)";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':title' => $title, ':price' => $price, ':category' => $category,
+            ':description' => $description, ':keywords' => $keywords, ':image' => $image);
+        $query->execute($parameters);
     }
     
     /////////////////////////////////// USERS //////////////////////////////////
