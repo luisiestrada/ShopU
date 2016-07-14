@@ -26,11 +26,6 @@ class Search extends Controller
             $input = trim($_GET['searchbar']);
             $category = $_GET['category'];
             
-            // redirect to homepage if user types whitespace only
-            if ($input == "") {
-                header('location: ' . URL . 'home/index');
-            }
-            
             // interact with Item model to get the data, to see if there's a match
             $items = $this->db_model->getItemsContaining($input, $category);
             

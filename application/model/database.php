@@ -64,6 +64,11 @@ class Database
      */
     public function getItemsContaining($value, $category)
     {
+        // redirect to homepage if user types whitespace only
+        if ($input == "") {
+            header('location: ' . URL . 'home/index');
+        }
+        
         // There are 2 possible queries that are performed:
         // if category is 'All': SELECT ... WHERE (title LIKE ...)
         // else: SELECT ... WHERE category = $category AND (title LIKE ...)
