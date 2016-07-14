@@ -10,7 +10,8 @@ class Controller
     /**
      * Models
      */
-    public $idem_model = null;
+    public $item_model = null;
+    public $user_model = null;
 
     /**
      * Whenever controller is created, open a database connection too and load "the model".
@@ -43,10 +44,12 @@ class Controller
      */
     public function loadModel()
     {
-        require APP . 'model/model.php';        
+        require APP . 'model/model.php';
         require APP . 'model/item.php';
+        require APP . 'model/registered_user.php';
         
         // create new "model" (and pass the database connection)
         $this->item_model = new Item($this->db);
+        $this->user_model = new RegisteredUser($this->db);
     }
 }

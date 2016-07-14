@@ -1,5 +1,11 @@
 <div class="container">
-    <h3>Items matching keyword '<?php echo($input); ?>'...</h3>
+    <?php
+        if (isset($_GET["submit_search"])) {
+            echo("<h3>Items matching keyword '" .$input. "'...</h3>");
+        } else {
+            echo("<h3>Showing all items</h3>");
+        }
+    ?>
     <div class="box">
         <table class="dataTables display responsive no-wrap" width="100%">
             <thead style="background-color: #ddd; font-weight: bold;">
@@ -34,4 +40,10 @@
     </div>
 </div>
 
-<?php if ($category != null) echo("<script>document.getElementById('category').value = '" .$category. "';</script>"); ?>
+<?php
+    if (isset($_GET["submit_search"])) {
+        if ($category != NULL && $category != 'All') {
+            echo("<script>document.getElementById('category').value = '" .$category. "';</script>");
+        }
+    }
+?>

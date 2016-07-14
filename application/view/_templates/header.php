@@ -30,13 +30,14 @@
     <!-- navigation -->
     <div class="navigation">
         <a href="<?php echo URL; ?>">home</a>
-        <a href="<?php echo URL; ?>home/exampleone">subpage</a>
-        <a href="<?php echo URL; ?>home/exampletwo">subpage 2</a>
+        <a href="<?php echo URL; ?>search/index">All items</a>
+        <a href="<?php echo URL; ?>users/index">All users</a>
+        <a href="<?php echo URL; ?>users/signup">Sign up</a>
     </div>
     
     <br><br>
     <div class="container-fluid" align="center">
-        <form action="<?php echo URL; ?>search/index" method="GET">
+        <form action="<?php echo URL; ?>search/form" method="GET">
             <div class="input-group col-lg-10">
                 <span class="input-group-btn">
                     <select name="category" id="category" class="btn btn-warning btn-lg">
