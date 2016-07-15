@@ -1,9 +1,13 @@
 <?php
 
+/**
+ * class Database will handle all kinds of queries to the database
+ */
 class Database
 {
     /**
-     * @param object $db A PDO database connection
+     * Connect to the database
+     * @param object $db - A PDO database connection
      */
     function __construct($db)
     {
@@ -33,8 +37,8 @@ class Database
     }
     
     /**
-     * Retrieve a registered admin
-     * @param type $adminId - the id of the registered admin
+     * Retrieve an admin
+     * @param type $adminId - the id of the admin
      */
     public function retrieveAdmin($adminId)
     {
@@ -69,17 +73,17 @@ class Database
             header('location: ' . URL . 'home/index');
         }
         
-        // There are 2 possible queries that are performed:
+        // There are 2 possible queries that are performed here:
         // if category is 'All': SELECT ... WHERE (title LIKE ...)
         // else: SELECT ... WHERE category = $category AND (title LIKE ...)
-        $category_statement = ($category == 'All') ? "" : "category = '" .$category. "' AND ";
+        $category_statement = ($category == 'All') ? "" : "category = '$category' AND ";
         
-        $sql = "SELECT id, title, price, category, description, keywords FROM item WHERE "
+        $sql = "SELECT id, title, price, category, description, keywords, image FROM item WHERE "
                 . $category_statement
-                . "(title LIKE '%" .$value. "%' "
-                . "OR category LIKE '%" .$value. "%' "
-                . "OR description LIKE '%" .$value. "%' "
-                . "OR keywords LIKE '%" .$value. "%')";
+                . "(title LIKE '%$value%' "
+                . "OR category LIKE '%$value%' "
+                . "OR description LIKE '%$value%' "
+                . "OR keywords LIKE '%$value%')";
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -96,12 +100,12 @@ class Database
         $query = $this->db->prepare($sql);
         $query->execute();
 
-        // fetch() is the PDO method that get exactly one result
+        // fetch() is the PDO method that gets exactly one result
         return $query->fetch()->amount_of_items;
     }
     
     /**
-     * Add item to the db (without an image)
+     * Add item to the database without an image
      */
     public function addItem($title, $price, $category, $description, $keywords)
     {
@@ -114,7 +118,7 @@ class Database
     }
     
     /**
-     * Add item to the db with image
+     * Add item to the database with image
      */
     public function addItemWithImage($title, $price, $category, $description, $keywords, $image)
     {
@@ -130,10 +134,6 @@ class Database
     
     /**
      * Add user to the database
-     * @param type $student_id
-     * @param type $username
-     * @param type $email
-     * @param type $password
      */
     public function addUser($student_id, $username, $email, $password)
     {
@@ -147,10 +147,6 @@ class Database
     
     /**
      * Add user to the database with profile picture
-     * @param type $student_id
-     * @param type $username
-     * @param type $email
-     * @param type $password
      * @param type $image - profile picture
      */
     public function addUserWithImage($student_id, $username, $email, $password, $image)
@@ -164,7 +160,7 @@ class Database
     }
     
     /**
-     * This function returns all users
+     * Return all users in the database
      */
     public function getAllUsers()
     {

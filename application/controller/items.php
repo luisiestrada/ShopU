@@ -33,9 +33,10 @@ class Items extends Controller
     {
         if (isset($_POST['submit_add_item'])) {
             
-            $file = $_FILES["image"]["tmp_name"]; // reference to file uploaded
+            // store reference to the file uploaded into $file
+            $file = $_FILES["image"]["tmp_name"];
             
-            // if false, not an image or no image selected
+            // if returns false, not an image or no image selected
             if ($file != null && getimagesize($file)) {
                 
                 // resize image (destroys original)
@@ -47,8 +48,7 @@ class Items extends Controller
                     $_POST["category"], $_POST["description"], $_POST["keywords"], $image);
         
             } else {
-                echo "HERE";
-                // add item to database without image (default image used instead)
+                // add item to database without an image
                 $this->db_model->addItem($_POST["title"], $_POST["price"],
                     $_POST["category"], $_POST["description"], $_POST["keywords"]);
             }
