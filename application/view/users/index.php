@@ -1,7 +1,7 @@
 <div class="container">
     <h3>List of users</h3>
     <div class="box">
-        <table class="dataTables display responsive no-wrap" width="100%">
+        <table id="userTable" class="display responsive no-wrap" width="100%">
             <thead style="background-color: #ddd; font-weight: bold;">
             <tr>
                 <td>Image</td>
@@ -19,7 +19,7 @@
                     <td>
                         <?php if (isset($user->image)) {
                             echo ("<img src='data:image/jpeg;base64," . base64_encode($user->image)
-                                    . "' alt='item image' style='height:100px; width: 100px'");
+                                    . "' alt='User image' style='height:100px; width: 100px'");
                         } else {
                             echo ("<img src='" . URL . "img/demo-image.png'");
                         }
@@ -37,3 +37,18 @@
         </table>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+    $('#userTable').DataTable({
+        "pagingType": "simple_numbers", // pagination buttons
+        "aaSorting": [], // initial sort (empty: none)
+        "columnDefs": [ {
+            "targets": [0, -1, -2], // these columns are unorderable
+            "orderable": false
+        } ],
+        "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]]
+    });
+});
+</script>
+
