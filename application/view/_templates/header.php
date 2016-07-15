@@ -13,11 +13,13 @@
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo URL; ?>css/style.css">
     
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    
+     <!--Bootstrap--> 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
     <!-- DataTables -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css"/>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> <!-- jQuery -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
     
 </head>
 <body>
@@ -29,7 +31,7 @@
 
     <!-- navigation -->
     <div class="navigation">
-        <a href="<?php echo URL; ?>">home</a>
+        <a href="<?php echo URL; ?>">Home</a>
         <a href="<?php echo URL; ?>items/index">All items</a>
         <a href="<?php echo URL; ?>items/sellitem">Sell item</a>
         <a href="<?php echo URL; ?>users/index">All users</a>

@@ -1,12 +1,16 @@
 # Milestone 2 Prototype
 
-SFSU CSC 648/848 project
+## SFSU CSC 648/848 project
 
-Visit our [site](http://sfsuswe.com/~su16g03/prototype) and type into the search bar
-on the homepage to see our products.
+Visit our [site](http://sfsuswe.com/~su16g03/prototype) and type into the search 
+bar on the homepage to see our products. We currently offer furniture, electronics, 
+clothes, and books as categories.
 
-The app delegates the handling of form input to the Search controller, which
-works with the appropriate models and views depending on the category chosen
-by the user, e.g. 'book' or 'song'.
+For the main prototype search functionality, the app delegates the handling of 
+search bar input to the Search controller, which works with the DB model and returns 
+data back to the items view.
 
-TODO: adhere to UMLs & APIs + simplify schema
+Extra: there are currently also options to add items and view/add users to the 
+database (user functionality still in its infancy).
+
+TODO: Adhere to UMLs & APIs + User registration (?)
