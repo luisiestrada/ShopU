@@ -69,12 +69,12 @@ body {
     color: #fff;
 }
 .container button {
-    background-color: #ccc;
+    /*background-color: #ccc;*/
     border: 0;
     padding: 5px 10px;
     cursor: pointer;
 }
-.container button:hover {
+/*.container button:hover {
     background-color: #222;
     color: #fff;
-}
+}*/
