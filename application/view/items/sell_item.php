@@ -4,7 +4,7 @@
         <h3>Sell Item</h3>
         <form action="<?php echo URL; ?>items/additem" method="POST" enctype="multipart/form-data">
             <label>Title</label>
-            <input autofocus type="text" name="title" required autocomplete="off" value="text"/><br><br>
+            <input type="text" name="title" required autocomplete="off" value="text"/><br><br>
             <label>Price</label>
             <input type="number" name="price" required autocomplete="off" value="10.00" step="0.01"/><br><br>
             <label>Category</label>
