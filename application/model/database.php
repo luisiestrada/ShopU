@@ -78,7 +78,7 @@ class Database
         // else: SELECT ... WHERE category = $category AND (title LIKE ...)
         $category_statement = ($category == 'All') ? "" : "category = '$category' AND ";
         
-        $sql = "SELECT id, title, price, category, description, keywords FROM item WHERE "
+        $sql = "SELECT id, title, price, category, description, keywords, image FROM item WHERE "
                 . $category_statement
                 . "(title LIKE '%$value%' "
                 . "OR category LIKE '%$value%' "
