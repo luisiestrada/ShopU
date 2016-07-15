@@ -19,20 +19,24 @@ class Search extends Controller
      */
     public function form()
     {
+        // check if search bar form was submitted
         if (isset($_GET["submit_search"])) {
             
+            // get user input & category from search bar
             $input = trim($_GET['searchbar']);
             $category = $_GET['category'];
             
-            // interact with db model to get the data, to see if there's a match
+            // interact with db model to see if there's a match in the database
+            // with the provided input & category, and if so, store into $items
             $items = $this->db_model->getItemsContaining($input, $category);
             
-            // load the views depending on whether or not there was a match
-            if ($items == null) { // if no results, load notfound page
+            if ($items == null) {
+                // if no match found, load errors/notfound view
                 require APP . 'view/_templates/header.php';
                 require APP . 'view/errors/notfound.php';
                 require APP . 'view/_templates/footer.php';
-            } else { // if results, load items found
+            } else {
+                // if match found, load items/index, which has access to $items
                 require APP . 'view/_templates/header.php';
                 require APP . 'view/items/index.php';
                 require APP . 'view/_templates/footer.php';
