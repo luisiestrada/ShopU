@@ -14,3 +14,7 @@ Extra: there are currently also options to add items and view/add users to the
 database (user functionality still in its infancy).
 
 TODO: Adhere to UMLs & APIs + User registration (?)
+
+<hr>
+
+![ShopU](http://sfsuswe.com/~su16g03/prototype/img/shopu-mod.jpg)
