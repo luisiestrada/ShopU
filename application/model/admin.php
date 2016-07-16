@@ -2,10 +2,10 @@
 
 class Admin
 {
-    public $username;
-    public $emailAddress;
-    public $id;
-    public $password;
+    private $username;
+    private $emailAddress;
+    private $adminId;
+    private $password;
 
     /**
      * Set the username
@@ -26,11 +26,11 @@ class Admin
     
     /**
      * Set the id
-     * @param type $adminId - the id of the new admin
+     * @param type $id - the id of the new admin
      */
-    public function setId($adminId)
+    public function setId($id)
     {
-        $id = $adminId;
+        $adminId = $id;
     }
     
     /**
@@ -38,7 +38,7 @@ class Admin
      */
     public function getId()
     {
-        return $id;
+        return $adminId;
     }
     
     /**
@@ -88,7 +88,7 @@ class Admin
      * Remove registered user from the database
      * @param type $userId - the id of the registered user to remove
      */
-    public function removeItem($userId)
+    public function removeRegUser($userId)
     {
         $this->db_model->removeRegUser($userId)
     }
