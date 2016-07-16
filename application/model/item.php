@@ -2,13 +2,13 @@
 
 class Item
 {
-    public $itemName;
-    public $itemId;
-    public $sellerId;
-    public $price;
-    public $details;
-    public $category;
-    public $itemPictures;
+    private $itemName;
+    private $itemId;
+    private $sellerId;
+    private $price;
+    private $details;
+    private $category;
+    private $itemPictures;
     
     /**
      * Set the item name
