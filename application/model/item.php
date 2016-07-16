@@ -6,9 +6,30 @@ class Item
     private $itemId;
     private $sellerId;
     private $price;
-    private $details;
     private $category;
-    private $itemPictures;
+    private $details;
+    private $itemImages;
+    
+    /**
+     * Item class constructor
+     * @param type $name - the name of the item
+     * @param type $id - the id of the item
+     * @param type $seller - the id of the registered user selling the item
+     * @param type $pr - the price of the item
+     * @param type $cat - the category the item belongs to
+     * @param type $dt - the details of the item as specified by the seller
+     * @param type $imgs - the images array of the images representing the item
+     */
+    public function __construct($name, $id, $seller, $pr, $cat, $dt, $imgs)
+    {
+        $itemName = $name;
+        $itemId = $id;
+        $sellerId = $seller;
+        $price = $pr;
+        $category = $cat;
+        $details = $dt;
+        $itemImages = $imgs;
+    }
     
     /**
      * Set the item name
@@ -113,30 +134,30 @@ class Item
     }
     
     /**
-     * Set one of the item's 3 pictures
-     * @param type $index - the index of the picture to add/replace
-     * @param type $image - the image of the picture to add/repace
+     * Set one of the item's 3 images
+     * @param type $index - the index of the image to add/replace
+     * @param type $image - the image filename of the image to add/repace
      */
-    public function setPicture($index, $image)
+    public function setImage($index, $image)
     {
-        $itemPictures[$index] = $image;
+        $itemImages[$index] = $image;
     }
     
     /**
-     * Get one of the item's 3 pictures
-     * @param type $index - the index of the picture to get
+     * Get one of the item's 3 images
+     * @param type $index - the index of the image to get
      */
-    public function getPicture($index)
+    public function getImage($index)
     {
-        return $itemPictures[$index];
+        return $itemImages[$index];
     }
     
     /**
-     * Remove one of the item's 3 pictures
-     * @param type $index - the index of the picture to remove
+     * Remove one of the item's 3 images
+     * @param type $index - the index of the image to remove
      */
-    public function removePicture($index)
+    public function removeImage($index)
     {
-        $itemPictures[$index] = "";
+        $itemImages[$index] = "";
     }
 }
