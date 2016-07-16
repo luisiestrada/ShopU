@@ -93,4 +93,21 @@ class Order
     {
         return $orderDate;
     }
+    
+    /**
+     * Set the details for the order
+     * @param type $dt - the details as specified by the seller
+     */
+    public function setDetails($dt)
+    {
+        $details = $dt;
+    }
+    
+    /**
+     * Get the details for the order
+     */
+    public function getDetails()
+    {
+        return $details;
+    }
 }
