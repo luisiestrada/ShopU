@@ -2,12 +2,12 @@
 
 class Order
 {
-    public $buyerId;
-    public $sellerId;
-    public $itemId;
-    public $totalPrice;
-    public $orderDate;
-    public $details;
+    private $buyerId;
+    private $sellerId;
+    private $itemId;
+    private $totalPrice;
+    private $orderDate;
+    private $details;
 
     /**
      * Set the buyer for the order
