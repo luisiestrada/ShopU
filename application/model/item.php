@@ -49,29 +49,11 @@ class Item
     }
     
     /**
-     * Set the item id
-     * @param type $name - the name of the item
-     */
-    public function setItemId($id)
-    {
-        $itemId = $id;
-    }
-    
-    /**
      * Get the item id
      */
     public function getItemId()
     {
         return $itemId;
-    }
-    
-    /**
-     * Set the item's seller id
-     * @param type $id - the id of the registered user who is selling this item
-     */
-    public function setSellerId($id)
-    {
-        $sellerId = $id;
     }
     
     /**
