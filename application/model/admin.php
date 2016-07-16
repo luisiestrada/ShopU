@@ -85,7 +85,7 @@ class Admin
      * Remove registered user from the database
      * @param type $userId - the id of the registered user to remove
      */
-    public function removeRegUser($userId)
+    public function removeUser($userId)
     {
         $this->db_model->removeRegUser($userId)
     }
