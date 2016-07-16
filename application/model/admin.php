@@ -87,6 +87,6 @@ class Admin
      */
     public function removeUser($userId)
     {
-        $this->db_model->removeRegUser($userId)
+        $this->db_model->removeUser($userId)
     }
 }
