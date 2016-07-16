@@ -3,19 +3,25 @@
 class Admin
 {
     private $username;
-    private $emailAddress;
     private $adminId;
+    private $emailAddress;
     private $password;
 
     /**
-     * Set the username
-     * @param type $name - the username of the new admin
+     * Admin class constructor
+     * @param type $name - the username of the admin
+     * @param type $id - the id of the admin
+     * @param type $email - the email address of the admin
+     * @param type $pwd - the password of the admin
      */
-    public function setUsername($name)
+    public function __construct($name, $id, $email, $pwd)
     {
         $username = $name;
+        $adminId = $id;
+        $emailAddress = $email;
+        $password = $pwd;
     }
-    
+
     /**
      * Get the username
      */
@@ -23,16 +29,7 @@ class Admin
     {
         return $username;
     }
-    
-    /**
-     * Set the id
-     * @param type $id - the id of the new admin
-     */
-    public function setId($id)
-    {
-        $adminId = $id;
-    }
-    
+
     /**
      * Get the id of the admin
      */
