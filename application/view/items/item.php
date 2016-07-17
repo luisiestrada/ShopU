@@ -13,7 +13,7 @@
     <!-- Show what user searched for if they made a search -->
     <?php
         if (isset($_GET["submit_search"])) {
-            echo("<h3>Items matching keyword '$input'...</h3>");
+            echo("<h3>Items matching keyword '" .$input. "'...</h3>");
         } else {
             echo("<h3>List of all items</h3>");
         }
@@ -40,7 +40,6 @@
             
             <!-- table body (loop through items & print their information) -->
             <tbody>
-            <?php foreach ($items as $item) { ?>
                 <tr>
                     <td>
                         <?php // display user-uploaded image if it exists
@@ -64,11 +63,9 @@
                         </a>
                     </td>
                 </tr>
-            <?php } ?>
             </tbody>
-            
         </table>
-        <br/>
+        <br>
     </div>
 </div>
 

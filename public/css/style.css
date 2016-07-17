@@ -1,40 +1,16 @@
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     font-size: 14px;
 }
-.logo {
-    font-size: 100px;
-    font-weight: bolder;
-    letter-spacing: -6px;
-    color: #222;
-    margin: 20px 30px;
+.logo img {
+   height: 100px;
+   margin: 0 auto 10px auto;
 }
-.logo .number {
-    color: #222;
-    opacity: 0.1;
-}
-.navigation {
-    margin-left: 33px;
-}
-.navigation a {
-    display: inline-block;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: 2px solid #222;
-    background: #222;
-    color: #fff;
-}
-.navigation a:hover {
-    color: #222;
-    background: transparent;
-}
+
+/* container class */
 .container {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 33px;
+    padding: 10px;
+    margin: 5px;
 }
 .container a {
     color: #222;
@@ -68,13 +44,45 @@ body {
     background-color: #222;
     color: #fff;
 }
-.container button {
-    /*background-color: #ccc;*/
-    border: 0;
+
+/***** non-MINI css *****/
+
+/* signin, signup, sell item pages */
+.param {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    color: #222;
+    max-width: 400px;
+    max-height: auto;
     padding: 5px 10px;
-    cursor: pointer;
 }
-/*.container button:hover {
-    background-color: #222;
-    color: #fff;
-}*/
+.div {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.div hr {
+  margin: 7px 0px;
+  width: 35%;
+}
+.pos-left { float: left; } /* --text */
+.pos-right { float: right; } /* text-- */
+
+/* homepage */
+.bg {
+    background-image: url("../img/bg.jpg");
+    background-size: 960px;
+    height: 500px;
+}
+#homepage-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+/* item buy buttons */
+.buy-button {
+    padding: 5px 10px !important;
+}

@@ -4,7 +4,7 @@
  * Class Users
  */
 class Users extends Controller
-{   
+{
     /**
      * Show all users
      */
@@ -17,15 +17,23 @@ class Users extends Controller
     }
     
     /**
+     * Go to view/users/signin.php
+     */
+    public function signIn()
+    {
+        require APP . 'view/users/signin.php';
+        require APP . 'view/_templates/footer.php';
+    }
+    
+    /**
      * Go to view/users/signup.php
      */
-    public function signup()
+    public function signUp()
     {
-        require APP . 'view/_templates/header.php';
         require APP . 'view/users/signup.php';
         require APP . 'view/_templates/footer.php';
     }
-
+    
     /**
      * Add user to database
      */
@@ -37,19 +45,19 @@ class Users extends Controller
             
             // if false, not an image or no image selected
             if ($file != null && getimagesize($file)) {
-                
+
                 // resize image (destroys original)
                 parent::resizeImage($file);
                 $image = file_get_contents($file);
-                
+
                 // add user to database with image
                 $this->db_model->addUserWithImage($_POST["student_id"], $_POST["username"],
-                    $_POST["email"], $_POST["password"], $image);
-        
+                        $_POST["email"], $_POST["password"], $image);
+                
             } else {
                 // add user to database without image (default image used instead)
                 $this->db_model->addUser($_POST["student_id"], $_POST["username"],
-                    $_POST["email"], $_POST["password"]);
+                        $_POST["email"], $_POST["password"]);
             }
             
             // where to go after user is added
@@ -60,4 +68,5 @@ class Users extends Controller
             header('location: ' . URL . 'users/index');
         }
     }
+
 }
