@@ -44,23 +44,10 @@ body {
     background-color: #222;
     color: #fff;
 }
-.container button {
-    cursor: pointer;
-}
 
-/* non-MINI css */
-.search {
-  margin-top: 3px;  
-}
-shape {
-    margin: 0px 10px;
-}
-font-bold {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #ffffff;
-  font-size: 1000px;
-}
+/***** non-MINI css *****/
+
+/* signin, signup, sell item pages */
 .param {
     margin-left: auto;
     margin-right: auto;
@@ -68,6 +55,7 @@ font-bold {
     color: #222;
     max-width: 400px;
     max-height: auto;
+    padding: 5px 10px;
 }
 .div {
   text-align: center;
@@ -78,16 +66,8 @@ font-bold {
   margin: 7px 0px;
   width: 35%;
 }
-.pos-left {
-    float: left;
-}
-.pos-right {
-    float: right;
-}
-.drop {
-    max-width: 40px;
-    max-height: 60px;
-}
+.pos-left { float: left; } /* --text */
+.pos-right { float: right; } /* text-- */
 
 /* homepage */
 .bg {
@@ -102,7 +82,7 @@ font-bold {
     color: white;
 }
 
-/* items */
+/* item buy buttons */
 #buy-button {
     padding: 5px 10px;
 }
