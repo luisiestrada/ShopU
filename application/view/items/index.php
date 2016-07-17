@@ -13,14 +13,14 @@
     <!-- Show what user searched for if they made a search -->
     <?php
         if (isset($_GET["submit_search"])) {
-            echo("<h3>Items matching keyword '" .$input. "'...</h3>");
+            echo("<h3>Items matching keyword '$input'...</h3>");
         } else {
             echo("<h3>List of all items</h3>");
         }
     ?>
     
     <!-- item table -->
-    <div class="box">
+    <div class="box table-responsive">
         <table id="itemTable" class="display responsive no-wrap" width="100%">
             
             <!-- table head (column names) -->
@@ -59,7 +59,7 @@
                     <td><?php if (isset($item->description)) echo htmlspecialchars($item->description, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($item->keywords)) echo htmlspecialchars($item->keywords, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
-                        <a href="<?php echo URL . 'items/buyitem/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>">
+                        <a href="<?php echo URL . 'items/getitem/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>">
                             <button class="btn btn-warning btn-lg" type="submit" name="buy">BUY</button>
                         </a>
                     </td>

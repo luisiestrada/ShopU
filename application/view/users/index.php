@@ -3,7 +3,7 @@
     <h3>List of all users</h3>
     
     <!-- User table -->
-    <div class="box">
+    <div class="box table-responsive">
         <table id="userTable" class="display responsive no-wrap" width="100%">
             
             <!-- table head (column names) -->
