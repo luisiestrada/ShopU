@@ -78,7 +78,7 @@ class Admin
      */
     public function removeItem($itemId)
     {
-        $this->db_model->removeItem($itemId)
+        $this->db_model->removeItem($itemId);
     }
     
     /**
@@ -87,6 +87,6 @@ class Admin
      */
     public function removeUser($userId)
     {
-        $this->db_model->removeUser($userId)
+        $this->db_model->removeUser($userId);
     }
 }
