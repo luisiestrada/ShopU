@@ -2,12 +2,31 @@
 
 class Order
 {
-    public $buyerId;
-    public $sellerId;
-    public $itemId;
-    public $totalPrice;
-    public $orderDate;
-    public $details;
+    private $buyerId;
+    private $sellerId;
+    private $itemId;
+    private $totalPrice;
+    private $orderDate;
+    private $details;
+    
+    /**
+     * Order class constructor
+     * @param type $buyer - the id of buyer
+     * @param type $seller - the id of the seller
+     * @param type $item - the id of the item being sold/bought
+     * @param type $price - the total price of the order
+     * @param type $date - the date of the order
+     * @param type $dt - the details of the order
+     */
+    public function __construct($buyer, $seller, $item, $price, $date, $dt)
+    {
+        $buyerId = $buyer;
+        $sellerId = $seller;
+        $itemId = $item;
+        $totalPrice = $price;
+        $orderDate = $date;
+        $details = $dt;
+    }
 
     /**
      * Set the buyer for the order
@@ -92,5 +111,22 @@ class Order
     public function getDate()
     {
         return $orderDate;
+    }
+    
+    /**
+     * Set the details for the order
+     * @param type $dt - the details as specified by the seller
+     */
+    public function setDetails($dt)
+    {
+        $details = $dt;
+    }
+    
+    /**
+     * Get the details for the order
+     */
+    public function getDetails()
+    {
+        return $details;
     }
 }
