@@ -83,6 +83,6 @@ body {
 }
 
 /* item buy buttons */
-#buy-button {
-    padding: 5px 10px;
+.buy-button {
+    padding: 5px 10px !important;
 }
