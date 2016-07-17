@@ -21,8 +21,13 @@ class Users extends Controller
      */
     public function signup()
     {
-        require APP . 'view/_templates/header.php';
         require APP . 'view/users/signup.php';
+        require APP . 'view/_templates/footer.php';
+    }
+    
+    public function signin()
+    {   
+        require APP . 'view/users/signin.php';
         require APP . 'view/_templates/footer.php';
     }
 

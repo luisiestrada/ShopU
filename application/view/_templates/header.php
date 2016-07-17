@@ -18,6 +18,13 @@
 
         <!-- DataTables -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css"/>
+        <!-- jQuery, loaded in the recommended protocol-less way -->
+        <!-- more http://www.paulirish.com/2010/the-protocol-relative-url/ -->
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+        <!-- DataTables CSS + JS -->
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+        <script type="text/javascript" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
     </head>
     <link rel="shortcut icon" href="<?php echo URL; ?>img/shopu-mod.jpg" />
@@ -53,18 +60,18 @@
 
                         <!-- navbar links to the left -->
                         <ul class="nav navbar-nav">
-                            <li><a href="<?php echo URL; ?>home/signin"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                            <li><a href="<?php echo URL; ?>"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Items<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="<?php echo URL; ?>home/index">All Items</a></li>
-                                    <li><a href="<?php echo URL; ?>home/sellitem">Sell Item</a></li>
+                                    <li><a href="<?php echo URL; ?>items/index">All Items</a></li>
+                                    <li><a href="<?php echo URL; ?>items/sellitem">Sell Item</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Users<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="<?php echo URL; ?>home/alluser">All Users</a></li>
+                                    <li><a href="<?php echo URL; ?>users/index">All Users</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -77,8 +84,8 @@
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                     <span class="glyphicon glyphicon-cog"></span> Settings<span class="caret"></span></a>
                                 <ul class="dropdown-menu" align ="center">
-                                    <li><a href="<?php echo URL; ?>home/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                                    <li><a href="<?php echo URL; ?>home/signin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                    <li><a href="<?php echo URL; ?>users/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                    <li><a href="<?php echo URL; ?>users/signin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -112,9 +119,6 @@
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </span>
-
                 </div>
             </form>                    
         </div>
-    </body>
-</html>
