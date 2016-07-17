@@ -3,11 +3,30 @@
 class RegisteredUser
 {
     private $username;
-    private $emailAddress;
     private $studentId;
-    private $profilePic;
+    private $emailAddress;
     private $password;
     private $items;
+    private $profileImage;
+    
+    /**
+     * RegisteredUser class constructor
+     * @param type $name - the username of the registered user
+     * @param type $id - the id of the registered user
+     * @param type $email - the email address of the registered user
+     * @param type $pwd - the password of the registered user
+     * @param type $itms - the items the registered user is selling (if any)
+     * @param type $image - the profile image of the registered user (if any)
+     */
+    public function __construct($name, $id, $email, $pwd)
+    {
+        $username = $name;
+        $studentId = $id;
+        $emailAddress = $email;
+        $password = $pwd;
+        $items = $itms;
+        $profileImage = $image;
+    }
 
     /**
      * Set the username
@@ -24,15 +43,6 @@ class RegisteredUser
     public function getUsername()
     {
         return $username;
-    }
-    
-    /**
-     * Set the id
-     * @param type $id - the id of the new registered user (a valid SFSU ID)
-     */
-    public function setId($id)
-    {
-        $studentId = $id;
     }
     
     /**
@@ -78,20 +88,20 @@ class RegisteredUser
     }
     
     /**
-     * Set the profile picture
-     * @param type $image - the profile picture filename uploaded by the registered user
+     * Set the profile image
+     * @param type $image - the profile image filename uploaded by the registered user
      */
-    public function setProfilePic($image)
+    public function setProfileImage($image)
     {
-        $profilePic = $image;
+        $profileImage = $image;
     }
     
     /**
-     * Get the profile picture filename
+     * Get the profile image filename
      */
-    public function getProfilePic()
+    public function getProfileImage()
     {
-        return $profilePic;
+        return $profileImage;
     }
     
     /**
