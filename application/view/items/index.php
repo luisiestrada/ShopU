@@ -60,7 +60,7 @@
                     <td><?php if (isset($item->keywords)) echo htmlspecialchars($item->keywords, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
                         <a href="<?php echo URL . 'items/getitem/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>">
-                            <button class="btn btn-warning btn-lg" type="submit" name="buy">BUY</button>
+                            <button class="btn btn-warning btn-lg" id="buy-button" type="submit" name="buy">BUY</button>
                         </a>
                     </td>
                 </tr>
@@ -68,6 +68,7 @@
             </tbody>
             
         </table>
+        <br/>
     </div>
 </div>
 

@@ -110,7 +110,6 @@
                     </select>
                 </span>
 
-
                 <!-- search bar text input -->
                 <input type="text" name="searchbar" class="form-control input-lg"
                        placeholder="Search..." autocomplete="off"/>

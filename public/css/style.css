@@ -1,5 +1,5 @@
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     font-size: 14px;
 }
 .logo img {
@@ -45,8 +45,6 @@ body {
     color: #fff;
 }
 .container button {
-    border: 0;
-    padding: 5px 10px;
     cursor: pointer;
 }
 
@@ -102,4 +100,9 @@ font-bold {
     top: 50%;
     transform: translateY(-50%);
     color: white;
+}
+
+/* items */
+#buy-button {
+    padding: 5px 10px;
 }
