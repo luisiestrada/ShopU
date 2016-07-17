@@ -47,12 +47,4 @@ class Home extends Controller
         require APP . 'view/home/example_two.php';
         require APP . 'view/_templates/footer.php';
     }
-    public function signup()
-    {
-        require APP . 'view/users/signup.php';
-    }
-     public function signin()
-    {   require APP . 'view/_templates/header.php';
-        require APP . 'view/users/signin.php';
-    }
 }

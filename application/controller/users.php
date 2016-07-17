@@ -19,10 +19,19 @@ class Users extends Controller
     /**
      * Go to view/users/signup.php
      */
-    public function signup()
+    public function signUp()
     {
         require APP . 'view/_templates/header.php';
         require APP . 'view/users/signup.php';
+        require APP . 'view/_templates/footer.php';
+    }
+    
+    /**
+     * Go to view/users/signin.php
+     */
+    public function signIn()
+    {
+        require APP . 'view/users/signin.php';
         require APP . 'view/_templates/footer.php';
     }
 
