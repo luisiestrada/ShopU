@@ -85,8 +85,9 @@ body {
 shape { margin: 0px 10px; }
 
 font-bold {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 20px;
+  color: #ffffff;
   font-size: 1000px;
 }
 
@@ -95,7 +96,7 @@ font-bold {
     margin-right: auto;
     margin-top: 10px;
     color: #222;
-    max-width: 400;
+    max-width: 400px;
     max-height: auto;
 }
 
@@ -115,7 +116,7 @@ font-bold {
 .pos-right { float: right; }
 
 .bg {
-    background-color: #474e5d;
+    background-image: url("../img/bg.jpg");
     background-size: 960px;
     height: 500px;
 }

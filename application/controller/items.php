@@ -20,7 +20,7 @@ class Items extends Controller
      * Display view to sell items
      */
     public function sellItem()
-    {
+    {   require APP . 'view/_templates/header.php';
         require APP . 'view/items/sell_item.php';
         require APP . 'view/_templates/footer.php';
     }

@@ -42,32 +42,36 @@
                                 <h2>Create account</h2>
                             </div>
                             <div class="shape-group">
-                                <label class="control-label">Username</label>
-                                <input name="username" type="text" maxlength="50" class="form-control">
-                            </div>
-                            <div class="shape-group">
                                 <label class="control-label">SFSU ID</label>
-                                <input name="email" type="email" maxlength="50" class="form-control">
+                                <input name="student_id" type="text" maxlength="50" class="form-control">
                             </div>
                             <div class="shape-group">
-                                <label class="control-label">Email</label>
-                                <input name="email" type="email" maxlength="50" class="form-control">
+                                <label class="control-label">Username</label>
+                                <input name="username" type="text" autocomplete="off" class="form-control">
+                            </div>
+                            <div class="shape-group">
+                                <label class="control-label">SFSU Email</label>
+                                <input name="email" type="text" autocomplete="off" class="form-control">
                             </div>
                             <div class="shape-group">
                                 <label class="control-label">Password</label>
-                                <input name="password" type="password" maxlength="25" class="form-control" placeholder="at least 6 characters" length="40">
+                                <input name="password" type="password" autocomplete="off" class="form-control" placeholder="at least 6 characters" length="40">
                             </div>
                             <div class="shape-group">
                                 <label class="control-label">Confirm Password</label>
-                                <input name="passwordagain" type="password" maxlength="25" class="form-control" placeholder="at least 6 characters">
+                                <input name="passwordagain" type="password" autocomplete="off" class="form-control" placeholder="at least 6 characters">
+                            </div>
+                            <div class="shape-group">
+                                <label class="control-label">Profile picture</label>
+                                <input name="image" type="file">
                             </div>
                             <h2></h2>
                             <div class="shape-group">
-                                <button name="signup" type="submit" class="btn btn-info btn-block">Create your account</button>
+                                <button name="submit_add_user" type="submit" class="btn btn-info btn-block" value="Sign up">Create your account</button>
                             </div>
                             <p class="shape-group">By creating an account, you agree to our <a href="#">Terms of Use</a> and our <a href="#">Privacy Policy</a>.</p>
                             <hr>
-                            <p></p>Already have an account? <a href="<?php echo URL; ?> home/signin">Sign in</a></p>
+                            <p></p>Already have an account? <a href="<?php echo URL; ?> users/signin">Sign in</a></p>
                         </form>
                     </div>
                 </div>
