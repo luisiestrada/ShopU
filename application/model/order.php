@@ -8,6 +8,25 @@ class Order
     private $totalPrice;
     private $orderDate;
     private $details;
+    
+    /**
+     * Order class constructor
+     * @param type $buyer - the id of buyer
+     * @param type $seller - the id of the seller
+     * @param type $item - the id of the item being sold/bought
+     * @param type $price - the total price of the order
+     * @param type $date - the date of the order
+     * @param type $dt - the details of the order
+     */
+    public function __construct($buyer, $seller, $item, $price, $date, $dt)
+    {
+        $buyerId = $buyer;
+        $sellerId = $seller;
+        $itemId = $item;
+        $totalPrice = $price;
+        $orderDate = $date;
+        $details = $dt;
+    }
 
     /**
      * Set the buyer for the order
