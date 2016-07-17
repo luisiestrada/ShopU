@@ -14,8 +14,9 @@ body {
     opacity: 0.1;
 }
 .navigation {
-    margin-left: 33px;
+    margin-left: 33px
 }
+
 .navigation a {
     display: inline-block;
     padding: 10px 15px;
@@ -32,9 +33,8 @@ body {
     background: transparent;
 }
 .container {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 33px;
+    padding: 10px;
+    margin: 5px;
 }
 .container a {
     color: #222;
@@ -69,12 +69,63 @@ body {
     color: #fff;
 }
 .container button {
-    /*background-color: #ccc;*/
+    background-color: #ccc;
     border: 0;
     padding: 5px 10px;
     cursor: pointer;
 }
-/*.container button:hover {
+.container button:hover {
     background-color: #222;
     color: #fff;
-}*/
+}
+
+.search {
+  margin-top: 3px;  
+}
+shape { margin: 0px 10px; }
+
+font-bold {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1000px;
+}
+
+.param {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    color: #222;
+    max-width: 400px;
+    max-height: 600px;
+}
+
+.div {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.div hr {
+  margin: 7px 0px;
+  width: 35%;
+}
+
+.pos-left { float: left; }
+
+.pos-right { float: right; }
+
+.bg {
+    background-color: #474e5d;
+    background-size: 960px;
+    height: 500px;
+}
+
+.drop {
+    max-width: 40px;
+    max-height: 60px;
+}
+
+.logo img {
+   height: 200px;
+   margin: 0 auto 10px auto;
+}
