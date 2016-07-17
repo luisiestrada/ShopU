@@ -65,7 +65,7 @@
                         </div>
                         <div class="shape-group">
                             <label>Image</label>
-                            <input class="form-control" type="file" name="image"/>
+                            <input type="file" name="image"/>
                         </div><br><br>
                         
                         <!-- submit button -->
