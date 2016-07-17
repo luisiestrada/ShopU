@@ -18,36 +18,23 @@ class Database
         }
     }
     
-    /**
-     * Retrieve an item
-     * @param type $itemId - the id of the item
-     */
-    public function retrieveItem($itemId)
-    {
-
-    }
-    
-    /**
-     * Retrieve a registered user
-     * @param type $userId - the id of the registered user
-     */
-    public function retrieveRegUser($userId)
-    {
-
-    }
-    
-    /**
-     * Retrieve an admin
-     * @param type $adminId - the id of the admin
-     */
-    public function retrieveAdmin($adminId)
-    {
-
-    }
-    
     /////////////////////////////////// ITEMS //////////////////////////////////
     
-     /**
+    /**
+     * Get an item by its id
+     * @param type $item_id
+     */
+    public function getItem($item_id)
+    {   
+        $sql = "SELECT * FROM item WHERE id = '$item_id'";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        
+        // fetch() is the PDO method that gets exactly one result
+        return $query->fetch();
+    }
+    
+    /**
      * Get all items from database
      */
     public function getAllItems()
@@ -64,7 +51,6 @@ class Database
      * Get all items containing a certain keyword
      * @param type $value - the keyword user searched for
      * @param type $category - the search bar category
-     * @return type - PDO[]
      */
     public function getItemsContaining($value, $category)
     {
@@ -86,8 +72,7 @@ class Database
                 . "OR keywords LIKE '%$value%')";
         $query = $this->db->prepare($sql);
         $query->execute();
-
-        // fetchAll() is the PDO method that gets all result rows
+        
         return $query->fetchAll();
     }
     
@@ -99,8 +84,7 @@ class Database
         $sql = "SELECT COUNT(id) AS amount_of_items FROM item";
         $query = $this->db->prepare($sql);
         $query->execute();
-
-        // fetch() is the PDO method that gets exactly one result
+        
         return $query->fetch()->amount_of_items;
     }
     
@@ -133,6 +117,31 @@ class Database
     /////////////////////////////////// USERS //////////////////////////////////
     
     /**
+     * Get a user by their id from database
+     * @param type $userId - the id of the registered user
+     */
+    public function getUser($userId)
+    {
+        $sql = "SELECT * FROM user WHERE id = '$userId'";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        
+        return $query->fetch();
+    }
+    
+    /**
+     * Get all users from database
+     */
+    public function getAllUsers()
+    {
+        $sql = "SELECT id, student_id, username, email, image FROM user";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        
+        return $query->fetchAll();
+    }
+    
+    /**
      * Add user to the database
      */
     public function addUser($student_id, $username, $email, $password)
@@ -159,14 +168,30 @@ class Database
         $query->execute($parameters);
     }
     
+    ////////////////////////////////// ADMINS /////////////////////////////////
+    
     /**
-     * Return all users in the database
+     * Get an admin
+     * @param type $adminId - the id of the admin
      */
-    public function getAllUsers()
+    public function getAdmin($adminId)
     {
-        $sql = "SELECT id, student_id, username, email, image FROM user";
+        $sql = "SELECT * FROM admin WHERE id = '$adminId'";
         $query = $this->db->prepare($sql);
         $query->execute();
+        
+        return $query->fetch();
+    }
+    
+    /**
+     * Get all admins from database
+     */
+    public function getAllAdmins()
+    {
+        $sql = "SELECT id, username, email, password, image FROM admin";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        
         return $query->fetchAll();
     }
 }
