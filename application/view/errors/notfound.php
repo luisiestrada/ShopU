@@ -9,5 +9,5 @@
 
 <!-- main content -->
 <div class="container">
-    Your search '<?php echo($input); ?>' did not match any products.
+    <h3>Your search '<?php echo($input); ?>' did not match any products.</h3>
 </div>
