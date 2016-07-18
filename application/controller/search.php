@@ -33,11 +33,13 @@ class Search extends Controller
             if ($items == null) {
                 // if no match found, load errors/notfound view
                 require APP . 'view/_templates/header.php';
+                require APP . 'view/_templates/navigation.php';
                 require APP . 'view/errors/notfound.php';
                 require APP . 'view/_templates/footer.php';
             } else {
                 // if match found, load items/index, which has access to $items
                 require APP . 'view/_templates/header.php';
+                require APP . 'view/_templates/navigation.php';
                 require APP . 'view/items/index.php';
                 require APP . 'view/_templates/footer.php';
             }

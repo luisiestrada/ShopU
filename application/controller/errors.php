@@ -18,6 +18,7 @@ class Errors extends Controller
     {
         // load views
         require APP . 'view/_templates/header.php';
+        require APP . 'view/_templates/navigation.php';
         require APP . 'view/errors/index.php';
         require APP . 'view/_templates/footer.php';
     }

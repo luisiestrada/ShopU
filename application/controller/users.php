@@ -12,6 +12,7 @@ class Users extends Controller
     {
         $users = $this->db_model->getAllUsers();
         require APP . 'view/_templates/header.php';
+        require APP . 'view/_templates/navigation.php';
         require APP . 'view/users/index.php';
         require APP . 'view/_templates/footer.php';
     }
@@ -21,6 +22,7 @@ class Users extends Controller
      */
     public function signIn()
     {
+        require APP . 'view/_templates/header.php';
         require APP . 'view/users/signin.php';
         require APP . 'view/_templates/footer.php';
     }
@@ -30,6 +32,7 @@ class Users extends Controller
      */
     public function signUp()
     {
+        require APP . 'view/_templates/header.php';
         require APP . 'view/users/signup.php';
         require APP . 'view/_templates/footer.php';
     }
