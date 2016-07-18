@@ -12,6 +12,7 @@ class Items extends Controller
     {
         $items = $this->db_model->getAllItems();
         require APP . 'view/_templates/header.php';
+        require APP . 'view/_templates/navigation.php';
         require APP . 'view/items/index.php';
         require APP . 'view/_templates/footer.php';
     }
@@ -21,6 +22,7 @@ class Items extends Controller
      */
     public function sellItem()
     {
+        require APP . 'view/_templates/header.php';
         require APP . 'view/items/sell_item.php';
         require APP . 'view/_templates/footer.php';
     }
@@ -33,6 +35,7 @@ class Items extends Controller
     {
         $item = $this->db_model->getItem($id);
         require APP . 'view/_templates/header.php';
+        require APP . 'view/_templates/navigation.php';
         require APP . 'view/items/item.php';
         require APP . 'view/_templates/footer.php';
     }
