@@ -32,15 +32,16 @@
             <div class="panel panel-primary">
                 <div class="panel-body">
                     
+                    <div class="logo" align ="center">
+                        <a href="<?php echo URL; ?>home/index">
+                            <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"
+                                 style="height:100px"/>
+                        </a>
+                    </div>
+                    
                     <!-- form -->
                     <form action="<?php echo URL; ?>items/additem" method="POST" enctype="multipart/form-data">
-                        <div class="logo" align ="center">
-                            <a href="<?php echo URL; ?>home/index">
-                                <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"
-                                     style="height:100px"/>
-                            </a>
-                        </div>
-
+                        
                         <!-- input fields -->
                         <label class="control-label">Title</label>
                         <input class="form-control" type="text" name="title" autocomplete="off" required/>

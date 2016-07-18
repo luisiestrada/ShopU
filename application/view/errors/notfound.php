@@ -1,7 +1,7 @@
 <!-- Change category on the search bar if user made a search -->
 <?php
     if (isset($_GET["submit_search"])) {
-        if ($category != NULL && $category != "All") {
+        if ($category != NULL && $category != 'All') {
             echo("<script>$('#category').val('$category');</script>");
         }
     }

@@ -32,13 +32,14 @@
             <div class="panel panel-primary">
                 <div class="panel-body">
                     
+                    <div class="logo" align="center">
+                        <a href="<?php echo URL; ?>home/index">
+                            <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo" />
+                        </a>
+                    </div>
+                    
                     <!-- form -->
                     <form action="#" method="POST">
-                        <div class="logo" align="center">
-                            <a href="<?php echo URL; ?>home/index">
-                                <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo" />
-                            </a>
-                        </div>
                         <div class="shape-group text-center">
                             <h2>Sign in</h2>
                         </div>
