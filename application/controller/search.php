@@ -38,7 +38,10 @@ class Search extends Controller
                 require APP . 'view/_templates/footer.php';
             } else {
                 // if match found, load items/index, which has access to $items
-                header('location: ' . URL . 'items/index');
+                require APP . 'view/_templates/header.php';
+                require APP . 'view/_templates/navigation.php';
+                require APP . 'view/items/index.php';
+                require APP . 'view/_templates/footer.php';
             }
             
         } else {
