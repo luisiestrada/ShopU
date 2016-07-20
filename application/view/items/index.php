@@ -1,5 +1,4 @@
-<!-- Change category on the search bar if user made a search -->
-<?php
+<?php // Change category on the search bar if user made a search
     if (isset($_GET["submit_search"])) {
         if ($category != NULL && $category != 'All') {
             echo("<script>$('#category').val('$category');</script>");
@@ -7,11 +6,9 @@
     }
 ?>
 
-<!-- main content -->
 <div class="container">
     
-    <!-- Show what user searched for if they made a search -->
-    <?php
+    <?php // Show what user searched for if they made a search
         if (isset($_GET["submit_search"])) {
             echo("<h3>Items matching keyword '$input'...</h3>");
         } else {
@@ -32,8 +29,6 @@
                     <td>Title</td>
                     <td>Price</td>
                     <td>Category</td>
-                    <td>Description</td>
-                    <td>Keywords</td>
                     <td></td>
                 </tr>
             </thead>
@@ -56,11 +51,9 @@
                     <td><?php if (isset($item->title)) echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($item->price)) echo '$' . htmlspecialchars($item->price, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($item->category)) echo htmlspecialchars($item->category, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($item->description)) echo htmlspecialchars($item->description, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($item->keywords)) echo htmlspecialchars($item->keywords, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
-                        <a href="<?php echo URL . 'items/getitem/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>">
-                            <button class="btn btn-warning btn-lg buy-button" type="submit" name="buy">BUY</button>
+                        <a href="<?php echo URL . 'items/getitem/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>"
+                           class="btn btn-warning btn-lg buy-button" id="buy">BUY
                         </a>
                     </td>
                 </tr>

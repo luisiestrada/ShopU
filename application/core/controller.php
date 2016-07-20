@@ -56,7 +56,7 @@ class Controller
      */
     protected function resizeImage($file)
     {
-        $maxDim = 100;
+        $maxDim = 400;
         list($width, $height) = getimagesize( $file );
         if ( $width > $maxDim || $height > $maxDim ) {
             
