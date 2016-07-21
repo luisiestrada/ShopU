@@ -2,7 +2,12 @@
     <div class="row">
         <div class="panel panel-primary">
             <div class="panel-body">
-
+                
+                <!--Back Button-->
+                <a href="<?php echo URL; ?>home/index">
+                    <button class="btn btn-info btn-lg buy-button">Back</button>
+                </a>
+                
                 <div class="logo" align ="center">
                     <a href="<?php echo URL; ?>home/index">
                         <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"
