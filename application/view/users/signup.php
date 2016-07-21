@@ -2,7 +2,12 @@
     <div class="row">
         <div class="panel panel-primary">
             <div class="panel-body">
-
+                
+                <!--Back Button-->
+                <a href="<?php echo URL; ?>home/index">
+                    <button class="btn btn-info btn-lg buy-button">Back</button>
+                </a>
+                
                 <div class="logo" align ="center">
                     <a href="<?php echo URL; ?>home/index">
                         <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"
@@ -41,7 +46,7 @@
 
                     <!-- sign up -->
                     <div class="shape-group">
-                        <button name="submit_add_user" type="submit" class="btn btn-info btn-block">
+                        <button name="submit_add_user" type="submit" class="btn btn-warning btn-block">
                             Create your account</button>
                     </div><br>
                     <p class="shape-group text-center">By creating an account, you agree to our

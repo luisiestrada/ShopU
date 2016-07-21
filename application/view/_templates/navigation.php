@@ -52,7 +52,7 @@
                     <li><a href="#"><span class="glyphicon glyphicon-inbox"></span> Inbox</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="glyphicon glyphicon-cog"></span> Settings<span class="caret"></span></a>
+                            <span class="glyphicon glyphicon-cog"></span> Account<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <?php if (isset($_SESSION["user_id"]) == false) { ?>
                                 <li><a href="<?php echo URL; ?>users/signup">
