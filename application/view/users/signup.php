@@ -41,7 +41,7 @@
 
                     <!-- sign up -->
                     <div class="shape-group">
-                        <button name="submit_add_user" type="submit" class="btn btn-info btn-block">
+                        <button name="submit_add_user" type="submit" class="btn btn-warning btn-block">
                             Create your account</button>
                     </div><br>
                     <p class="shape-group text-center">By creating an account, you agree to our

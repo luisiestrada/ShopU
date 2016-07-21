@@ -8,7 +8,7 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-md-6 text-center">
+        <div class="col-md-6 text-right">
             <?php // display user-uploaded image if it exists
                 if (isset($item->image)) {
                     echo ("<img src='data:image/jpeg;base64," . base64_encode($item->image)
@@ -19,7 +19,7 @@
                 ?><br>
         </div>
         
-        <div class="col-md-6">
+        <div class="col-md-6 text-left">
             <h1>
                 <?php if (isset($item->title)) echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>
             </h1>

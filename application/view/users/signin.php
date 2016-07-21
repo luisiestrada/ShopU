@@ -29,12 +29,12 @@
 
                     <!-- sign in -->
                     <div class="shape-group">
-                        <button name="signup" type="submit" class="btn btn-success btn-block">Sign in</button>
+                        <button name="signup" type="submit" class="btn btn-warning btn-block">Sign in</button>
                     </div>
 
                     <!-- create an account -->
                     <div class="shape-group div">
-                        <hr class="pos-left"><small>New to site?</small><hr class="pos-right">
+                        <hr class="pos-left"><large>New to site?</large><hr class="pos-right">
                     </div>
                     <p class="shape-group"><a href="<?php echo URL; ?>users/signup" class="btn btn-info btn-block">Create an account</a></p>
 
