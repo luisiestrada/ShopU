@@ -10,10 +10,11 @@ For the main prototype search functionality, the app delegates the handling of
 search bar input to the Search controller, which works with the DB model and returns 
 data back to the items view.
 
-Extra: there are currently also options to add items and view/add users to the 
-database (user functionality still in its infancy).
+There is also currently the option to signup with an account (using sessions),
+though the functionality of the app has yet to change based on whether or not a
+user is signed in.
 
-TODO: Adhere to UMLs & APIs + User registration (?)
+TODO: Rewrite UMLs & APIs in favor of PDO
 
 <hr>
 
