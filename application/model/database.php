@@ -168,6 +168,36 @@ class Database
         $query->execute($parameters);
     }
     
+    /**
+     * Returns whether or not username/password match a user in the db
+     * @param type $username
+     * @param type $password
+     * @return type boolean - success of matching user with supplied username/password
+     */
+    public function isCorrectCredentials($username, $password)
+    {
+        $sql = "SELECT COUNT(id) AS num_users FROM user WHERE username = '$username' AND password = '$password'";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        
+        // since usernames in db are unique, there can only be either 0 or 1
+        // users with supplied credentials (this is what we check for here)
+        return ($query->fetch()->num_users == 1) ? true : false;
+    }
+    
+    /**
+     * Return a user from their username
+     * @param type $username
+     * @return type user PDO
+     */
+    public function getUserFromUsername($username)
+    {
+        $sql = "SELECT * FROM user WHERE username = '$username'";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetch();
+    }
+    
     ////////////////////////////////// ADMINS /////////////////////////////////
     
     /**

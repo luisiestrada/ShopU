@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 /**
  * Class Search - deals with all search data
  */

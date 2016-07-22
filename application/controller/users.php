@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 /**
  * Class Users
  */
@@ -18,27 +20,56 @@ class Users extends Controller
     }
     
     /**
-     * Go to view/users/signin.php
+     * If user not signed in, go to view/users/signin.php
+     * Else, redirect to homepage (completely disallow re-signing in)
      */
     public function signIn()
     {
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/users/signin.php';
-        require APP . 'view/_templates/footer.php';
+        if (empty($_SESSION)) {
+            require APP . 'view/_templates/header.php';
+            require APP . 'view/users/signin.php';
+            require APP . 'view/_templates/footer.php';
+        } else {
+            header('location: ' . URL . 'home/index');
+        }
     }
     
     /**
-     * Go to view/users/signup.php
+     * If user not signed in, go to view/users/signup.php
+     * Else, redirect to homepage (completely disallow re-signing up)
      */
     public function signUp()
     {
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/users/signup.php';
-        require APP . 'view/_templates/footer.php';
+        if (empty($_SESSION)) {
+            require APP . 'view/_templates/header.php';
+            echo $_SESSION['username'];
+            require APP . 'view/users/signup.php';
+            require APP . 'view/_templates/footer.php';
+        } else {
+            header('location: ' . URL . 'home/index');
+        }
     }
     
     /**
-     * Add user to database
+     * Sign out user
+     * Reference: http://php.net/manual/en/function.session-destroy.php#example-5349
+     */
+    public function signOut()
+    {
+        $_SESSION = array();
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000,
+                $params["path"], $params["domain"],
+                $params["secure"], $params["httponly"]
+            );
+        }
+        session_destroy();
+        header('location: ' . URL . 'home/index');
+    }
+    
+    /**
+     * Add user to database (called when user submits sign up form)
      */
     public function addUser()
     {
@@ -63,12 +94,45 @@ class Users extends Controller
                         $_POST["email"], $_POST["password"]);
             }
             
-            // where to go after user is added
-            header('location: ' . URL . 'users/index');
+            // sign in user after user is added to db
+            Users::signInUser();
+            
+            // where to go after user is added & signed in
+            header('location: ' . URL . 'home/index');
             
         } else {
             // redirect to index if user visits /user/adduser without submitting form
             header('location: ' . URL . 'users/index');
+        }
+    }
+    
+    /**
+     * Sign in user
+     */
+    public function signInUser()
+    {
+        if (!empty($_POST)) {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            
+            $correctCredentials = $this->db_model->isCorrectCredentials($username, $password);
+            
+            if ($correctCredentials === false) { // reload signin page with error message
+                require APP . 'view/_templates/header.php';
+                echo "Incorrect username/password!";
+                require APP . 'view/users/signin.php';
+                require APP . 'view/_templates/footer.php';
+            } else { // start session
+                $user = $this->db_model->getUserFromUsername($username);
+                $_SESSION['user_id'] = $user->id;
+                $_SESSION['username'] = $user->username;
+                $_SESSION['email'] = $user->email;
+                header('location: ' . URL . 'home/index'); // go to homepage
+            }
+            
+        } else {
+            // redirect to homepage if user visits this method manually in URL
+            header('location: ' . URL . 'home/index');
         }
     }
 
