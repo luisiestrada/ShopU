@@ -61,7 +61,7 @@
                                     <span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
                             <?php } else { ?>
                                 <li><a href="<?php echo URL; ?>users/signout">
-                                    <span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+                                    <span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
                             <?php } ?>
                         </ul>
                     </li>
