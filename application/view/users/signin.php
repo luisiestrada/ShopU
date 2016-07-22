@@ -15,7 +15,7 @@
                 </div>
 
                 <!-- form -->
-                <form action="#" method="POST">
+                <form action="<?php echo URL; ?>users/signinuser" method="POST">
                     <div class="shape-group text-center">
                         <h2>Sign in</h2>
                     </div>
