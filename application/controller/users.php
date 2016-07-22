@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 /**
  * Class Users
  */
@@ -38,7 +40,7 @@ class Users extends Controller
     }
     
     /**
-     * Add user to database
+     * Add user to database (called when user submits sign up form)
      */
     public function addUser()
     {
@@ -64,7 +66,7 @@ class Users extends Controller
             }
             
             // where to go after user is added
-            header('location: ' . URL . 'users/index');
+            header('location: ' . URL . 'home/index');
             
         } else {
             // redirect to index if user visits /user/adduser without submitting form
