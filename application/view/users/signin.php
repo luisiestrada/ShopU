@@ -11,12 +11,11 @@
                         <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo" />
                     </a>
                 </div>
+                <div class="shape-group text-center">
+                    <h2>Sign in</h2>
+                </div>
                 
                 <form action="<?php echo URL; ?>users/signinuser" method="POST">
-                    <div class="shape-group text-center">
-                        <h2>Sign in</h2>
-                    </div>
-
                     <!-- input fields -->
                     <div class="shape-group">
                         <label>Username</label>

@@ -8,14 +8,14 @@
                 
                 <div class="logo" align ="center">
                     <a href="<?php echo URL; ?>home/index">
-                        <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"
-                             style="height:100px"/>
+                        <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"/>
                     </a>
                 </div>
-
-                <!-- form -->
+                <div class="shape-group text-center">
+                    <h2>Sell Item</h2>
+                </div>
+                
                 <form action="<?php echo URL; ?>items/additem" method="POST" enctype="multipart/form-data">
-
                     <!-- input fields -->
                     <label for="title" class="control-label">Title</label>
                     <input type="text" name="title" id="title" class="form-control" autocomplete="off" required/>

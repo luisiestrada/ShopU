@@ -8,16 +8,14 @@
                 
                 <div class="logo" align="center">
                     <a href="<?php echo URL; ?>home/index">
-                        <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"
-                             style="height:100px"/>
+                        <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"/>
                     </a>
+                </div>
+                <div class="shape-group text-center">
+                    <h2>Sign Up</h2>
                 </div>
                 
                 <form action="<?php echo URL; ?>users/adduser" method="POST" enctype="multipart/form-data">
-                    <div class="shape-group text-center">
-                        <h2>Sign Up</h2>
-                    </div>
-
                     <!-- input fields -->
                     <div class="shape-group">
                         <label class="control-label">SFSU ID</label>
