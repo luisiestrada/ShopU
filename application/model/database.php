@@ -39,7 +39,7 @@ class Database
      */
     public function getAllItems()
     {
-        $sql = "SELECT id, title, price, category, description, keywords, image FROM item";
+        $sql = "SELECT * FROM item";
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -91,26 +91,27 @@ class Database
     /**
      * Add item to the database without an image
      */
-    public function addItem($title, $price, $category, $description, $keywords)
+    public function addItem($title, $seller_id, $price, $category, $description, $keywords)
     {
-        $sql = "INSERT INTO item (title, price, category, description, keywords) "
-            . "VALUES (:title, :price, :category, :description, :keywords)";
+        $sql = "INSERT INTO item (title, seller_id, price, category, description, keywords) "
+            . "VALUES (:title, :seller_id, :price, :category, :description, :keywords)";
         $query = $this->db->prepare($sql);
-        $parameters = array(':title' => $title, ':price' => $price, ':category' => $category,
-            ':description' => $description, ':keywords' => $keywords);
+        $parameters = array(':title' => $title, ':seller_id' => $seller_id, ':price' => $price,
+            ':category' => $category, ':description' => $description, ':keywords' => $keywords);
         $query->execute($parameters);
     }
     
     /**
      * Add item to the database with image
      */
-    public function addItemWithImage($title, $price, $category, $description, $keywords, $image)
+    public function addItemWithImage($title, $seller_id, $price, $category, $description, $keywords, $image)
     {
-        $sql = "INSERT INTO item (title, price, category, description, keywords, image) "
-            . "VALUES (:title, :price, :category, :description, :keywords, :image)";
+        $sql = "INSERT INTO item (title, seller_id, price, category, description, keywords, image) "
+            . "VALUES (:title, :seller_id, :price, :category, :description, :keywords, :image)";
         $query = $this->db->prepare($sql);
-        $parameters = array(':title' => $title, ':price' => $price, ':category' => $category,
-            ':description' => $description, ':keywords' => $keywords, ':image' => $image);
+        $parameters = array(':title' => $title, ':seller_id' => $seller_id, ':price' => $price,
+            ':category' => $category, ':description' => $description, ':keywords' => $keywords,
+            ':image' => $image);
         $query->execute($parameters);
     }
     

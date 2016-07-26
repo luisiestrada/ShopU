@@ -4,28 +4,27 @@
             <div class="panel-body">
                 
                 <!--Back Button-->
-                <button onclick="goBack()" class="btn btn-info btn-lg buy-button">Back</button>
+                <button type="button" onclick="goBack()" class="btn btn-info btn-lg buy-button">Back</button>
                 
                 <div class="logo" align="center">
                     <a href="<?php echo URL; ?>home/index">
                         <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo" />
                     </a>
                 </div>
+                <div class="shape-group text-center">
+                    <h2>Sign in</h2>
+                </div>
                 
                 <form action="<?php echo URL; ?>users/signinuser" method="POST">
-                    <div class="shape-group text-center">
-                        <h2>Sign in</h2>
-                    </div>
-
                     <!-- input fields -->
                     <div class="shape-group">
-                        <label>Username</label>
-                        <input name="username" type="text" maxlength="50"
+                        <label for="username">Username</label>
+                        <input name="username" type="text" id="username" maxlength="50"
                                autocomplete="off" class="form-control" required>
                     </div>
                     <div class="shape-group">
-                        <label>Password</label>
-                        <input name="password" type="password" maxlength="25"
+                        <label for="password">Password</label>
+                        <input name="password" type="password" id="password" maxlength="25"
                                autocomplete="off" class="form-control" required>
                     </div><br>
 

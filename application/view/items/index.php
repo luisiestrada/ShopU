@@ -122,8 +122,7 @@ if (isset($_GET["submit_search"])) {
                             <td><?php if (isset($item->category)) echo htmlspecialchars($item->category, ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>
                                 <a href="<?php echo URL . 'items/getitem/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>"
-                                   class="btn btn-warning btn-lg buy-button" id="buy">BUY
-                                </a>
+                                   class="btn btn-warning btn-lg buy-button" id="buy">BUY</a>
                             </td>
                         </tr>
 <?php } ?>
