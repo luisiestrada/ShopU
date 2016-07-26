@@ -1,3 +1,8 @@
+// function to go back a window
+function goBack() {
+    window.history.back();
+}
+
 $(function() {
     // just a super-simple JS demo
 

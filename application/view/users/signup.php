@@ -4,18 +4,15 @@
             <div class="panel-body">
                 
                 <!--Back Button-->
-                <a href="<?php echo URL; ?>home/index">
-                    <button class="btn btn-info btn-lg buy-button">Back</button>
-                </a>
+                <button onclick="goBack()" class="btn btn-info btn-lg buy-button">Back</button>
                 
-                <div class="logo" align ="center">
+                <div class="logo" align="center">
                     <a href="<?php echo URL; ?>home/index">
                         <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"
                              style="height:100px"/>
                     </a>
                 </div>
-
-                <!-- form -->
+                
                 <form action="<?php echo URL; ?>users/adduser" method="POST" enctype="multipart/form-data">
                     <div class="shape-group text-center">
                         <h2>Sign Up</h2>
