@@ -19,20 +19,20 @@ class Items extends Controller
         require APP . 'view/_templates/footer.php';
     }
     
-    /**
-     * If user is signed in, display view to sell an item
-     * Else, redirect them to sign in page
+    /** 
+     * If user not signed in, redirect to sign in page
+     * Else, display view to sell an item
      */
     public function sellItem()
     {
-        if (!empty($_SESSION)) {
-            require APP . 'view/_templates/header.php';
-            require APP . 'view/items/sell_item.php';
-            require APP . 'view/_templates/footer.php';
-        } else {
+        if (empty($_SESSION)) {
             require APP . 'view/_templates/header.php';
             echo "You must be signed in to be able to sell items!";
             require APP . 'view/users/signin.php';
+            require APP . 'view/_templates/footer.php';
+        } else {
+            require APP . 'view/_templates/header.php';
+            require APP . 'view/items/sell_item.php';
             require APP . 'view/_templates/footer.php';
         }
     }
