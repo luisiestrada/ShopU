@@ -20,13 +20,21 @@ class Items extends Controller
     }
     
     /**
-     * Display view to sell items
+     * If user is signed in, display view to sell an item
+     * Else, redirect them to sign in page
      */
     public function sellItem()
     {
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/items/sell_item.php';
-        require APP . 'view/_templates/footer.php';
+        if (!empty($_SESSION)) {
+            require APP . 'view/_templates/header.php';
+            require APP . 'view/items/sell_item.php';
+            require APP . 'view/_templates/footer.php';
+        } else {
+            require APP . 'view/_templates/header.php';
+            echo "You must be signed in to be able to sell items!";
+            require APP . 'view/users/signin.php';
+            require APP . 'view/_templates/footer.php';
+        }
     }
     
     /**
@@ -59,12 +67,10 @@ class Items extends Controller
                 parent::resizeImage($file);
                 $image = file_get_contents($file);
                 
-                // add item to database with image
                 $this->db_model->addItemWithImage($_POST["title"], $_POST["price"],
                     $_POST["category"], $_POST["description"], $_POST["keywords"], $image);
         
             } else {
-                // add item to database without an image
                 $this->db_model->addItem($_POST["title"], $_POST["price"],
                     $_POST["category"], $_POST["description"], $_POST["keywords"]);
             }
