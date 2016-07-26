@@ -12,7 +12,6 @@
                 <tr>
                     <td>Image</td>
                     <td>Id</td>
-                    <td>SFSU ID</td>
                     <td>Username</td>
                     <td>Email</td>
                     <td></td>
@@ -34,7 +33,6 @@
                         ?>
                     </td>
                     <td><?php if (isset($user->id)) echo htmlspecialchars($user->id, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($user->student_id)) echo htmlspecialchars($user->student_id, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($user->username)) echo htmlspecialchars($user->username, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($user->email)) echo htmlspecialchars($user->email, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
