@@ -12,9 +12,10 @@
             <?php // display user-uploaded image if it exists
                 if (isset($item->image)) {
                     echo ("<img src='data:image/jpeg;base64," . base64_encode($item->image)
-                            . "' alt='Item image' class='img-responsive'");
+                            . "' alt='Item image' class='img-responsive' style='height:400px'");
                 } else {
-                    echo ("<img src='" . URL . "img/demo-image.png' alt='Item Image' class='img-responsive'");
+                    echo ("<img src='//placehold.it/400/000000.jpg?text=No+Image' "
+                            . "alt='Item Image' class='img-responsive'");
                 }
                 ?><br>
         </div>
