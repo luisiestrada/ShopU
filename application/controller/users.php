@@ -42,7 +42,6 @@ class Users extends Controller
     {
         if (empty($_SESSION)) {
             require APP . 'view/_templates/header.php';
-            echo $_SESSION['username'];
             require APP . 'view/users/signup.php';
             require APP . 'view/_templates/footer.php';
         } else {

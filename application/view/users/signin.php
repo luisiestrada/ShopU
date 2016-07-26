@@ -4,17 +4,14 @@
             <div class="panel-body">
                 
                 <!--Back Button-->
-                <a href="<?php echo URL; ?>home/index">
-                    <button class="btn btn-info btn-lg buy-button">Back</button>
-                </a>
+                <button onclick="goBack()" class="btn btn-info btn-lg buy-button">Back</button>
                 
                 <div class="logo" align="center">
                     <a href="<?php echo URL; ?>home/index">
                         <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo" />
                     </a>
                 </div>
-
-                <!-- form -->
+                
                 <form action="<?php echo URL; ?>users/signinuser" method="POST">
                     <div class="shape-group text-center">
                         <h2>Sign in</h2>
@@ -39,7 +36,7 @@
 
                     <!-- create an account -->
                     <div class="shape-group div">
-                        <hr class="pos-left"><large>New to site?</large><hr class="pos-right">
+                        <hr class="pos-left">New to site?<hr class="pos-right">
                     </div>
                     <p class="shape-group"><a href="<?php echo URL; ?>users/signup" class="btn btn-info btn-block">Create an account</a></p>
 
