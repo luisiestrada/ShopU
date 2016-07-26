@@ -43,7 +43,7 @@
             <!-- tab content -->
             <div class="tab-content">
                 <div id="tab-description" class="tab-pane fade in active pull-left">
-                    <?php if (isset($item->description)) echo htmlspecialchars($item->description, ENT_QUOTES, 'UTF-8'); ?>
+                    <?php if (isset($item->description)) echo nl2br(htmlspecialchars($item->description, ENT_QUOTES, 'UTF-8')); ?>
                 </div>
                 <div id="tab-info" class="tab-pane fade pull-left">
                     Category: <?php if (isset($item->category)) echo htmlspecialchars($item->category, ENT_QUOTES, 'UTF-8'); ?><br>

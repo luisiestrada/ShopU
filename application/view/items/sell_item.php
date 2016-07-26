@@ -4,9 +4,7 @@
             <div class="panel-body">
                 
                 <!--Back Button-->
-                <a href="<?php echo URL; ?>home/index">
-                    <button class="btn btn-info btn-lg buy-button">Back</button>
-                </a>
+                <button onclick="goBack()" class="btn btn-info btn-lg buy-button">Back</button>
                 
                 <div class="logo" align ="center">
                     <a href="<?php echo URL; ?>home/index">
@@ -19,13 +17,13 @@
                 <form action="<?php echo URL; ?>items/additem" method="POST" enctype="multipart/form-data">
 
                     <!-- input fields -->
-                    <label class="control-label">Title</label>
-                    <input class="form-control" type="text" name="title" autocomplete="off" required/>
-                    <label class="control-label">Price</label>
-                    <input class="form-control" type="number" name="price" step="0.01" autocomplete="off" required/>
+                    <label for="title" class="control-label">Title</label>
+                    <input type="text" name="title" id="title" class="form-control" autocomplete="off" required/>
+                    <label for="price" class="control-label">Price</label>
+                    <input type="number" name="price" id="price" class="form-control" step="0.01" min="0.01" autocomplete="off" required/>
 
-                    <label>Category</label>
-                    <select class="form-control" name="category">
+                    <label for="category" class="control-label">Category</label>
+                    <select name="category" id="category" class="form-control">
                         <option value="Furniture">Furniture</option>
                         <option value="Electronics">Electronics</option>
                         <option value="Clothes">Clothes</option>
@@ -33,17 +31,18 @@
                     </select>
 
                     <div class="shape-group">
-                        <label>Description</label>
-                        <input class="form-control" type="text" name="description" autocomplete="off" required/>
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" class="form-control"></textarea>
                     </div>
                     <div class="shape-group">
-                        <label>Keywords</label>
-                        <input class="form-control" type="text" name="keywords" autocomplete="off" required/>
+                        <label for="keywords">Keywords</label>
+                        <input type="text" name="keywords" id="keywords" class="form-control" autocomplete="off"/>
                     </div>
                     <div class="shape-group">
-                        <label>Image</label>
-                        <input type="file" name="image"/>
-                    </div><br><br>
+                        <label for="image">Image</label>
+                        <input type="file" name="image" id="image"/>
+                    </div>
+                    <br><br>
 
                     <!-- submit button -->
                     <input class="form-control btn-primary" type="submit" name="submit_add_item" value="Sell Item" />
