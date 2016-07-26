@@ -18,25 +18,25 @@
                 <form action="<?php echo URL; ?>users/adduser" method="POST" enctype="multipart/form-data">
                     <!-- input fields -->
                     <div class="shape-group">
-                        <label class="control-label">SFSU ID</label>
-                        <input name="student_id" type="text" class="form-control" required>
+                        <label for="sfsu_id" class="control-label">SFSU ID</label>
+                        <input name="student_id" type="text" id="sfsu_id" class="form-control" required>
                     </div>
                     <div class="shape-group">
-                        <label class="control-label">Username</label>
-                        <input name="username" type="text" autocomplete="off" class="form-control" required>
+                        <label for="username" class="control-label">Username</label>
+                        <input name="username" type="text" id="username" autocomplete="off" class="form-control" required>
                     </div>
                     <div class="shape-group">
-                        <label class="control-label">SFSU Email</label>
-                        <input name="email" type="email" autocomplete="off" class="form-control" required>
+                        <label for="email" class="control-label">SFSU Email</label>
+                        <input name="email" type="email" id="email" autocomplete="off" class="form-control" required>
                     </div>
                     <div class="shape-group">
-                        <label class="control-label">Password</label>
-                        <input name="password" type="password" autocomplete="off"
+                        <label for="password" class="control-label">Password</label>
+                        <input name="password" type="password" id="password" autocomplete="off"
                                class="form-control" placeholder="at least 6 characters" required>
                     </div>
                     <div class="shape-group">
-                        <label class="control-label">Profile Picture</label>
-                        <input name="image" type="file">
+                        <label for="image" class="control-label">Profile Image</label>
+                        <input name="image" type="file" id="image">
                     </div><br>
 
                     <!-- sign up -->

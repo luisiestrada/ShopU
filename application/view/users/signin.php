@@ -18,13 +18,13 @@
                 <form action="<?php echo URL; ?>users/signinuser" method="POST">
                     <!-- input fields -->
                     <div class="shape-group">
-                        <label>Username</label>
-                        <input name="username" type="text" maxlength="50"
+                        <label for="username">Username</label>
+                        <input name="username" type="text" id="username" maxlength="50"
                                autocomplete="off" class="form-control" required>
                     </div>
                     <div class="shape-group">
-                        <label>Password</label>
-                        <input name="password" type="password" maxlength="25"
+                        <label for="password">Password</label>
+                        <input name="password" type="password" id="password" maxlength="25"
                                autocomplete="off" class="form-control" required>
                     </div><br>
 
