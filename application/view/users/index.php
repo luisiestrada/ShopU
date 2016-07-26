@@ -15,8 +15,7 @@
                     <td>SFSU ID</td>
                     <td>Username</td>
                     <td>Email</td>
-                    <td>DELETE</td>
-                    <td>EDIT</td>
+                    <td></td>
                 </tr>
             </thead>
             
@@ -38,8 +37,14 @@
                     <td><?php if (isset($user->student_id)) echo htmlspecialchars($user->student_id, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($user->username)) echo htmlspecialchars($user->username, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($user->email)) echo htmlspecialchars($user->email, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><a href="<?php echo URL . 'users/deleteuser/' . htmlspecialchars($user->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
-                    <td><a href="<?php echo URL . 'users/edituser/' . htmlspecialchars($user->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
+                    <td>
+                        <?php // allow user to edit their profile
+                            if (!empty($_SESSION) && isset($user->id)) {
+                                if ($_SESSION['user_id'] == $user->id) { ?>
+                                    <a href="<?php echo URL . 'users/edituser/'
+                                        . htmlspecialchars($user->id, ENT_QUOTES, 'UTF-8'); ?>">Edit</a>
+                        <?php }} ?>
+                    </td>
                 </tr>
             <?php } ?>
             </tbody>
@@ -56,7 +61,7 @@ $(document).ready(function(){
         "pagingType": "simple_numbers", // pagination buttons
         "aaSorting": [], // initial sort (empty: none)
         "columnDefs": [ {
-            "targets": [0, -1, -2], // these columns are unorderable
+            "targets": [0, -1], // these columns are unorderable
             "orderable": false
         } ],
         "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]]
