@@ -67,11 +67,11 @@ class Items extends Controller
                 parent::resizeImage($file);
                 $image = file_get_contents($file);
                 
-                $this->db_model->addItemWithImage($_POST["title"], $_POST["price"],
+                $this->db_model->addItemWithImage($_POST["title"], $_SESSION["user_id"], $_POST["price"],
                     $_POST["category"], $_POST["description"], $_POST["keywords"], $image);
         
             } else {
-                $this->db_model->addItem($_POST["title"], $_POST["price"],
+                $this->db_model->addItem($_POST["title"], $_SESSION["user_id"], $_POST["price"],
                     $_POST["category"], $_POST["description"], $_POST["keywords"]);
             }
             

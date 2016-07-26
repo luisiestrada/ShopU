@@ -49,7 +49,7 @@
                 <div id="tab-info" class="tab-pane fade pull-left">
                     Category: <?php if (isset($item->category)) echo htmlspecialchars($item->category, ENT_QUOTES, 'UTF-8'); ?><br>
                     Item ID: <?php if (isset($item->id)) echo htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?><br>
-                    Seller: N/A<br>
+                    Seller ID: <?php if (isset($item->seller_id)) echo htmlspecialchars($item->seller_id, ENT_QUOTES, 'UTF-8'); ?><br>
                 </div>
                 <div id="tab-keywords" class="tab-pane fade pull-left">
                     <?php if (isset($item->keywords)) echo htmlspecialchars($item->keywords, ENT_QUOTES, 'UTF-8'); ?>
