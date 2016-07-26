@@ -4,7 +4,7 @@
             <div class="panel-body">
                 
                 <!--Back Button-->
-                <button onclick="goBack()" class="btn btn-info btn-lg buy-button">Back</button>
+                <button type="button" onclick="goBack()" class="btn btn-info btn-lg buy-button">Back</button>
                 
                 <div class="logo" align ="center">
                     <a href="<?php echo URL; ?>home/index">
