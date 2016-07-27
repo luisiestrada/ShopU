@@ -21,7 +21,7 @@
                 </button>
 
                 <!-- navbar name -->
-                <a class="navbar-brand" href="<?php echo URL; ?>">ShopU</a>
+                <a class="navbar-brand" href="<?php echo URL; ?>"><span class="glyphicon glyphicon-home"></span> ShopU</a>
 
             </div>
 
@@ -30,26 +30,24 @@
 
                 <!-- navbar links to the left -->
                 <ul class="nav navbar-nav">
-                    <li><a href="<?php echo URL; ?>"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    
+                </ul>
+
+                <!-- navbar links to the right -->
+                <ul class="nav navbar-nav navbar-right">
+                    
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Items<span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-lamp"></span> Items<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="<?php echo URL; ?>items/index">All Items</a></li>
                             <li><a href="<?php echo URL; ?>items/sellitem">Sell Item</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Users<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?php echo URL; ?>users/index">All Users</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <!-- navbar links to the right -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-inbox"></span> Inbox</a></li>
+                    
+                    <li><a href="<?php echo URL; ?>users/index">
+                            <span class="glyphicon glyphicon-user"></span> Users</a></li>
+                            
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="glyphicon glyphicon-cog"></span> Account<span class="caret"></span></a>
