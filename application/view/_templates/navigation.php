@@ -81,7 +81,7 @@
                     <option value="Clothes">Clothes&ensp;</option>
                     <option value="Electronics">Electronics&emsp;</option>
                     <option value="Furniture">Furniture&ensp;</option>
-                    <option value="Transportation">Transportation&emsp;&ensp;</option>
+                    <option value="Transportation">Transportation&emsp;&nbsp;</option>
                     <option value="Other">Other&ensp;</option>
                 </select>
             </span>
