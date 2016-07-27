@@ -77,12 +77,12 @@
             <span class="input-group-btn">
                 <select name="category" id="category" class="btn btn-warning btn-lg resizeselect">
                     <option value="All">All</option>
-                    <option value="Books">Books</option>
-                    <option value="Clothes">Clothes</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Furniture">Furniture</option>
-                    <option value="Transportation">Transportation</option>
-                    <option value="Other">Other</option>
+                    <option value="Books">Books&ensp;</option>
+                    <option value="Clothes">Clothes&ensp;</option>
+                    <option value="Electronics">Electronics&emsp;</option>
+                    <option value="Furniture">Furniture&ensp;</option>
+                    <option value="Transportation">Transportation&emsp;&ensp;</option>
+                    <option value="Other">Other&ensp;</option>
                 </select>
             </span>
 
@@ -105,7 +105,7 @@
 http://stackoverflow.com/questions/20091481/auto-resizing-the-select-element-according-to-selected-options-width#answer-28310736-->
 <script>
     (function($, window){
-    var arrowWidth = 50;
+    var arrowWidth = 30;
     
     $.fn.resizeselect = function(settings) {
         return this.each(function() {
