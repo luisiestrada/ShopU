@@ -75,7 +75,7 @@
 
             <!-- category list -->
             <span class="input-group-btn">
-                <select name="category" id="category" class="btn btn-warning btn-lg">
+                <select name="category" id="category" class="btn btn-warning btn-lg resizeselect">
                     <option value="All">All</option>
                     <option value="Books">Books</option>
                     <option value="Clothes">Clothes</option>
@@ -99,5 +99,38 @@
 
         </div>
     </form>
-
 </div>
+
+<!--This function resizes the search bar <select> tag based on the <option> width selected. Reference:
+http://stackoverflow.com/questions/20091481/auto-resizing-the-select-element-according-to-selected-options-width#answer-28310736-->
+<script>
+    (function($, window){
+    var arrowWidth = 50;
+    
+    $.fn.resizeselect = function(settings) {
+        return this.each(function() {
+            
+            $(this).change(function(){
+                var $this = $(this);
+                
+                // create test element
+                var text = $this.find("option:selected").text();
+                var $test = $("<span>").html(text);
+                
+                // add to body, get width, and get out
+                $test.appendTo('body');
+                var width = $test.width();
+                $test.remove();
+                
+                // set select width
+                $this.width(width + arrowWidth);
+                
+                // run on start
+            }).change();
+        });
+    };
+    // run by default
+    $("select.resizeselect").resizeselect();
+    
+    })(jQuery, window);
+</script>
