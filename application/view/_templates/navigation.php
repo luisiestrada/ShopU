@@ -77,10 +77,12 @@
             <span class="input-group-btn">
                 <select name="category" id="category" class="btn btn-warning btn-lg">
                     <option value="All">All</option>
-                    <option value="Furniture">Furniture</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Clothes">Clothes</option>
                     <option value="Books">Books</option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Other">Other</option>
                 </select>
             </span>
 
