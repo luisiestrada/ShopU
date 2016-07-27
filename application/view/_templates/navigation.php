@@ -21,7 +21,7 @@
                 </button>
 
                 <!-- navbar name -->
-                <a class="navbar-brand" href="<?php echo URL; ?>">ShopU</a>
+                <a class="navbar-brand" href="<?php echo URL; ?>"><span class="glyphicon glyphicon-home"></span> ShopU</a>
 
             </div>
 
@@ -30,26 +30,24 @@
 
                 <!-- navbar links to the left -->
                 <ul class="nav navbar-nav">
-                    <li><a href="<?php echo URL; ?>"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    
+                </ul>
+
+                <!-- navbar links to the right -->
+                <ul class="nav navbar-nav navbar-right">
+                    
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Items<span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-lamp"></span> Items<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="<?php echo URL; ?>items/index">All Items</a></li>
                             <li><a href="<?php echo URL; ?>items/sellitem">Sell Item</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Users<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?php echo URL; ?>users/index">All Users</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <!-- navbar links to the right -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-inbox"></span> Inbox</a></li>
+                    
+                    <li><a href="<?php echo URL; ?>users/index">
+                            <span class="glyphicon glyphicon-user"></span> Users</a></li>
+                            
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="glyphicon glyphicon-cog"></span> Account<span class="caret"></span></a>
@@ -77,12 +75,14 @@
 
             <!-- category list -->
             <span class="input-group-btn">
-                <select name="category" id="category" class="btn btn-warning btn-lg">
+                <select name="category" id="category" class="btn btn-warning btn-lg resizeselect">
                     <option value="All">All</option>
-                    <option value="Furniture">Furniture</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Clothes">Clothes</option>
-                    <option value="Books">Books</option>
+                    <option value="Books">Books&ensp;</option>
+                    <option value="Clothes">Clothes&ensp;</option>
+                    <option value="Electronics">Electronics&emsp;</option>
+                    <option value="Furniture">Furniture&ensp;</option>
+                    <option value="Transportation">Transportation&emsp;&nbsp;</option>
+                    <option value="Other">Other&ensp;</option>
                 </select>
             </span>
 
@@ -99,5 +99,38 @@
 
         </div>
     </form>
-
 </div>
+
+<!--This function resizes the search bar <select> tag based on the <option> width selected. Reference:
+http://stackoverflow.com/questions/20091481/auto-resizing-the-select-element-according-to-selected-options-width#answer-28310736-->
+<script>
+    (function($, window){
+    var arrowWidth = 30;
+    
+    $.fn.resizeselect = function(settings) {
+        return this.each(function() {
+            
+            $(this).change(function(){
+                var $this = $(this);
+                
+                // create test element
+                var text = $this.find("option:selected").text();
+                var $test = $("<span>").html(text);
+                
+                // add to body, get width, and get out
+                $test.appendTo('body');
+                var width = $test.width();
+                $test.remove();
+                
+                // set select width
+                $this.width(width + arrowWidth);
+                
+                // run on start
+            }).change();
+        });
+    };
+    // run by default
+    $("select.resizeselect").resizeselect();
+    
+    })(jQuery, window);
+</script>

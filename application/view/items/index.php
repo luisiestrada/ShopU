@@ -3,6 +3,7 @@
 if (isset($_GET["submit_search"])) {
     if ($category != NULL && $category != 'All') {
         echo("<script>$('#category').val('$category');</script>");
+        echo("<script>$('select.resizeselect').resizeselect()</script>");
     }
 }
 ?>
