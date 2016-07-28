@@ -13,7 +13,13 @@ if (isset($_GET["submit_search"])) {
     <?php
     // Show what user searched for if they made a search
     if (isset($_GET["submit_search"])) {
-        echo("<h3>Items matching keyword '$input'...</h3>");
+        if ($input != '') {
+            echo("<h3>Items matching keyword '$input'...</h3>");
+        } else if ($category != 'All') {
+            echo("<h3>List of all items in '$category'</h3>");
+        } else {
+            echo("<h3>List of all items</h3>");
+        }
     } else {
         echo("<h3>List of all items</h3>");
     }

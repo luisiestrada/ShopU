@@ -35,7 +35,7 @@ class Database
     }
     
     /**
-     * Get all items from database
+     * Get all items from database (no category)
      */
     public function getAllItems()
     {
@@ -48,17 +48,29 @@ class Database
     }
     
     /**
+     * Get all items from database in a certain category
+     * @return type
+     */
+    public function getAllItemsFromCategory($category)
+    {
+        if ($category == 'All') {
+            $sql = "SELECT * FROM item";
+        } else {
+            $sql = "SELECT * FROM item WHERE category = '$category'";
+        }
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        
+        return $query->fetchAll();
+    }
+    
+    /**
      * Get all items containing a certain keyword
      * @param type $value - the keyword user searched for
      * @param type $category - the search bar category
      */
     public function getItemsContaining($value, $category)
     {
-        // redirect to homepage if user typed whitespace only
-        if ($value == "") {
-            header('location: ' . URL . 'home/index');
-        }
-        
         // There are 2 possible queries that are performed here:
         // if category is 'All': SELECT ... WHERE (title LIKE ...)
         // else: SELECT ... WHERE category = $category AND (title LIKE ...)

@@ -28,23 +28,25 @@ class Search extends Controller
             $input = trim($_GET['searchbar']);
             $category = $_GET['category'];
             
-            // interact with db model to see if there's a match in the database
-            // with the provided input & category, and if so, store into $items
-            $items = $this->db_model->getItemsContaining($input, $category);
+            // if user searches with blank input, get all items
+            // else, get all items containing keyword
+            if ($input == "") {
+                $items = $this->db_model->getAllItemsFromCategory($category);
+            } else {
+                $items = $this->db_model->getItemsContaining($input, $category);
+            }
+            
+            // load views
+            require APP . 'view/_templates/header.php';
+            require APP . 'view/_templates/navigation.php';
             
             if ($items == null) {
-                // if no match found, load errors/notfound view
-                require APP . 'view/_templates/header.php';
-                require APP . 'view/_templates/navigation.php';
                 require APP . 'view/errors/notfound.php';
-                require APP . 'view/_templates/footer.php';
             } else {
-                // if match found, load items/index, which has access to $items
-                require APP . 'view/_templates/header.php';
-                require APP . 'view/_templates/navigation.php';
                 require APP . 'view/items/index.php';
-                require APP . 'view/_templates/footer.php';
             }
+            
+            require APP . 'view/_templates/footer.php';
             
         } else {
             // redirect to homepage if user visits /search/form without
