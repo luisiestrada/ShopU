@@ -83,3 +83,9 @@ body {
     padding: 5px 10px !important;
     color: white !important;
 }
+
+/* adjust margin for search bar */ 
+.search-navbar {
+  margin-top: 2px;
+  margin-right: 10px
+}

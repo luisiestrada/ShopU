@@ -31,35 +31,6 @@ if (isset($_GET["submit_search"])) {
         <label class="bold">
             <font size="4" color="black">Filter:</font>
         </label>
-        <hr>
-        <label class="bold">
-            <font size="3" color="black">Category:</font>
-        </label>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="">
-                Books
-            </label>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="">
-                Clothes
-            </label>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="">
-                Electronics
-            </label>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="">
-                Furniture
-            </label>
-        </div>
-        <hr>
         <label class="bold">
             <font size="3" color="black">Price:</font>
         </label>
