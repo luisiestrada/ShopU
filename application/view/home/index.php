@@ -10,12 +10,6 @@
                 echo "Session Id: " . session_id() . "<br>";
             }
         ?>
-        
-        <h2>
-            ShopU is an electronic commerce website that provides
-            consumer-to-consumer sales services exclusively to students
-            attending San Francisco State University.
-        </h2>
     </div>
     
 </div>
