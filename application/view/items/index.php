@@ -71,7 +71,6 @@ if (isset($_GET["submit_search"])) {
                 <thead style="background-color: #ddd; font-weight: bold;">
                     <tr>
                         <td>Image</td>
-                        <td>Id</td>
                         <td>Title</td>
                         <td>Price</td>
                         <td>Category</td>
@@ -94,7 +93,6 @@ if (isset($_GET["submit_search"])) {
                                 }
                                 ?>
                             </td>
-                            <td><?php if (isset($item->id)) echo htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?></td>
                             <td><?php if (isset($item->title)) echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?></td>
                             <td><?php if (isset($item->price)) echo '$' . htmlspecialchars($item->price, ENT_QUOTES, 'UTF-8'); ?></td>
                             <td><?php if (isset($item->category)) echo htmlspecialchars($item->category, ENT_QUOTES, 'UTF-8'); ?></td>
