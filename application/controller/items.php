@@ -49,6 +49,20 @@ class Items extends Controller
         require APP . 'view/items/item.php';
         require APP . 'view/_templates/footer.php';
     }
+    
+    /**
+     * This function is used to show user the order confirmation.
+     * Users can review their ordered item before they place an item
+     * @param type $id
+     */
+    public function orderConfirm($id)
+    {
+        $item = $this->db_model->getItem($id);
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/_templates/navigation.php';
+        require APP . 'view/items/itemConfirmation.php';
+        require APP . 'view/_templates/footer.php';
+    }
 
     /**
      * Add item to database

@@ -29,7 +29,7 @@
             </h3>
             
             <!-- buy button -->
-            <a href="<?php echo URL . 'items/getitem/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>"
+            <a href="<?php echo URL . 'items/orderConfirm/' . htmlspecialchars($item->id, ENT_QUOTES, 'UTF-8'); ?>"
                class="btn btn-warning btn-lg buy-button" id="buy">BUY
             </a>
             <br><br>
