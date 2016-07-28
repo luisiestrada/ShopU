@@ -15,8 +15,10 @@ if (isset($_GET["submit_search"])) {
     if (isset($_GET["submit_search"])) {
         if ($input != '') {
             echo("<h3>Items matching keyword '$input'...</h3>");
+        } else if ($category != 'All') {
+            echo("<h3>List of all items in '$category'</h3>");
         } else {
-            echo("<h3>List of all items in category '$category'</h3>");
+            echo("<h3>List of all items</h3>");
         }
     } else {
         echo("<h3>List of all items</h3>");
