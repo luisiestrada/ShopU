@@ -199,6 +199,19 @@ class Database
     }
     
     /**
+     * Returns whether or not username is taken in the database
+     * @param type $username
+     * @return type boolean
+     */
+    public function usernameExists($username)
+    {
+        $sql = "SELECT COUNT(id) AS num_users FROM user WHERE username = '$username'";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return ($query->fetch()->num_users == 1) ? true : false;
+    }
+    
+    /**
      * Return a user from their username
      * @param type $username
      * @return type user PDO

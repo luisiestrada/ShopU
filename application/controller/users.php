@@ -55,7 +55,10 @@ class Users extends Controller
      */
     public function signOut()
     {
+        // unset session variables
         $_SESSION = array();
+        
+        // delete session cookie
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time() - 42000,
@@ -63,7 +66,10 @@ class Users extends Controller
                 $params["secure"], $params["httponly"]
             );
         }
+        
         session_destroy();
+        
+        // redirect to homepage when sign out complete
         header('location: ' . URL . 'home/index');
     }
     
@@ -73,6 +79,14 @@ class Users extends Controller
     public function addUser()
     {
         if (isset($_POST['submit_add_user'])) {
+            
+            if ($this->db_model->usernameExists($_POST['username']) == true) {
+                require APP . 'view/_templates/header.php';
+                echo "Username taken!";
+                require APP . 'view/users/signup.php';
+                require APP . 'view/_templates/footer.php';
+                return;
+            }
             
             $file = $_FILES["image"]["tmp_name"]; // reference to file uploaded
             
@@ -86,18 +100,13 @@ class Users extends Controller
                 // add user to database with image
                 $this->db_model->addUserWithImage($_POST["student_id"], $_POST["username"],
                         $_POST["email"], $_POST["password"], $image);
-                
             } else {
                 // add user to database without image (default image used instead)
                 $this->db_model->addUser($_POST["student_id"], $_POST["username"],
                         $_POST["email"], $_POST["password"]);
             }
             
-            // sign in user after user is added to db
-            Users::signInUser();
-            
-            // where to go after user is added & signed in
-            header('location: ' . URL . 'home/index');
+            Users::signInUser(); // sign in after user is added to db
             
         } else {
             // redirect to index if user visits /user/adduser without submitting form
