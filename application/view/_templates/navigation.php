@@ -8,11 +8,6 @@
             <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"
                  class='img-responsive'/>
         </div>
-        <h3 align = "center">
-            ShopU is an electronic commerce website that provides
-            consumer-to-consumer sales services exclusively to students
-            attending San Francisco State University.
-        </h3>
     </div>
     <!-- navigation bar -->
     <nav class="navbar navbar-default">
@@ -105,6 +100,11 @@
             </div>
         </div>
     </nav>
+    <h3 align = "center">
+        ShopU is an electronic commerce website that provides
+        consumer-to-consumer sales services exclusively to students
+        attending San Francisco State University.
+    </h3>
 </div>
 
 <!--This function resizes the search bar <select> tag based on the <option> width selected. Reference:
