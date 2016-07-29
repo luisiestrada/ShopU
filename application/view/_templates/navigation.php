@@ -4,14 +4,14 @@
 
     <!-- logo -->
     <div class = "container-fluid">
-        <div class="logo pull-left">
+        <div class="logo pull-left col-md-2">
             <a href="<?php echo URL; ?>home/index">
                 <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"/>
             </a>
         </div>
     </div>
     <!-- navigation bar -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default col-md-10">
         <div class="container-fluid">
 
             <!-- navbar header -->
