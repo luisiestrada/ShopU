@@ -5,8 +5,9 @@
     <!-- logo -->
     <div class = "container-fluid">
         <div class="logo pull-left">
-            <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"
-                 class='img-responsive'/>
+            <a href="<?php echo URL; ?>home/index">
+                <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"/>
+            </a>
         </div>
     </div>
     <!-- navigation bar -->
