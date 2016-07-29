@@ -9,96 +9,97 @@
                 <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"/>
             </a>
         </div>
-    <!-- navigation bar -->
-    <nav class="navbar navbar-default col-md-10">
+        <!-- navigation bar -->
+        <nav class="navbar navbar-default col-md-10">
 
-        <!-- navbar header -->
-        <div class="navbar-header col-md-8 search-navbar">
+            <!-- navbar header -->
+            <div class="navbar-header col-md-8 search-navbar">
 
-            <!-- hamburger icon -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+                <!-- hamburger icon -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-            <!-- search bar -->
-            <!-- leads to the form() method in the Search controller -->
-            <form class="search-navbar" action="<?php echo URL; ?>search/form" method="GET" id='searchbar'>
-                <div class="input-group input-group-lg">
+                <!-- search bar -->
+                <!-- leads to the form() method in the Search controller -->
+                <form class="search-navbar" action="<?php echo URL; ?>search/form" method="GET" id='searchbar'>
+                    <div class="input-group input-group-lg">
 
-                    <!-- category list -->
-                    <span class="input-group-btn">
-                        <select name="category" id="category" class="btn btn-warning btn-lg resizeselect">
-                            <option value="All">All</option>
-                            <option value="Books">Books&ensp;</option>
-                            <option value="Clothes">Clothes&ensp;</option>
-                            <option value="Electronics">Electronics&emsp;</option>
-                            <option value="Furniture">Furniture&ensp;</option>
-                            <option value="Transportation">Transportation&emsp;&nbsp;</option>
-                            <option value="Other">Other&ensp;</option>
-                        </select>
-                    </span>
+                        <!-- category list -->
+                        <span class="input-group-btn">
+                            <select name="category" id="category" class="btn btn-warning btn-lg resizeselect">
+                                <option value="All">All</option>
+                                <option value="Books">Books&ensp;</option>
+                                <option value="Clothes">Clothes&ensp;</option>
+                                <option value="Electronics">Electronics&emsp;</option>
+                                <option value="Furniture">Furniture&ensp;</option>
+                                <option value="Transportation">Transportation&emsp;&nbsp;</option>
+                                <option value="Other">Other&ensp;</option>
+                            </select>
+                        </span>
 
-                    <!-- search bar text input -->
+                        <!-- search bar text input -->
 
-                    <input type="text" name="searchbar" class="form-control"
-                           placeholder="Search..." autocomplete="off"/>
+                        <input type="text" name="searchbar" class="form-control"
+                               placeholder="Search..." autocomplete="off"/>
 
-                    <!-- submit button (magnifier icon) -->
-                    <span class="input-group-btn">
-                        <button class="btn btn-warning btn-lg" type="submit" name="submit_search">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
+                        <!-- submit button (magnifier icon) -->
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-lg" type="submit" name="submit_search">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
 
-                </div>
-            </form>
-        </div>
+                    </div>
+                </form>
+            </div>
 
-        <!-- navbar body -->
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <!-- navbar links to the right -->
-            <ul class="nav navbar-nav navbar-right">
+            <!-- navbar body -->
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <!-- navbar links to the right -->
+                <ul class="nav navbar-nav navbar-right">
 
-                <li class="divider-vertical"></li>
+                    <li class="divider-vertical"></li>
 
-                <li>
-                    <a href="<?php echo URL; ?>items/sellItem">
-                        <span class="glyphicon glyphicon-lamp"></span> Sell Item</a>
-                </li>
+                    <li>
+                        <a href="<?php echo URL; ?>items/sellItem">
+                            <span class="glyphicon glyphicon-lamp"></span> Sell Item</a>
+                    </li>
 
-                <li class="divider-vertical"></li>
+                    <li class="divider-vertical"></li>
 
-                <li>
-                    <a href="<?php echo URL; ?>users/index">
-                        <span class="glyphicon glyphicon-user"></span> Users</a>
-                </li>
+                    <li>
+                        <a href="<?php echo URL; ?>users/index">
+                            <span class="glyphicon glyphicon-user"></span> Users</a>
+                    </li>
 
-                <li class="divider-vertical"></li>
+                    <li class="divider-vertical"></li>
 
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="glyphicon glyphicon-cog"></span> Account<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <?php if (isset($_SESSION["user_id"]) == false) { ?>
-                            <li><a href="<?php echo URL; ?>users/signup">
-                                    <span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="<?php echo URL; ?>users/signin">
-                                    <span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
-                        <?php } else { ?>
-                            <li><a href="<?php echo URL; ?>users/signout">
-                                    <span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
-                                <?php } ?>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-</div>
-    </nav>
-    <h4 align = "center">
-        ShopU provides consumer-to-consumer sales services exclusively to SFSU students
-    </h4>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-cog"></span> Account<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <?php if (isset($_SESSION["user_id"]) == false) { ?>
+                                <li><a href="<?php echo URL; ?>users/signup">
+                                        <span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                <li><a href="<?php echo URL; ?>users/signin">
+                                        <span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+                            <?php } else { ?>
+                                <li><a href="<?php echo URL; ?>users/signout">
+                                        <span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+                                    <?php } ?>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h4 align = "left">
+            ShopU provides consumer-to-consumer sales services exclusively to SFSU students
+        </h4>
+    </div>
+
 </div>
 
 <!--This function resizes the search bar <select> tag based on the <option> width selected. Reference:
