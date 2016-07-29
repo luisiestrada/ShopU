@@ -97,11 +97,9 @@
         </div>
 
     </nav>
-    <h3 align = "center">
-        ShopU is an electronic commerce website that provides
-        consumer-to-consumer sales services exclusively to students
-        attending San Francisco State University.
-    </h3>
+    <h4 align = "left">
+        ShopU provides consumer-to-consumer sales services exclusively to SFSU students
+    </h4>
 </div>
 
 <!--This function resizes the search bar <select> tag based on the <option> width selected. Reference:
