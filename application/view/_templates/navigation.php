@@ -23,10 +23,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <!-- navbar name -->
-                <a class="navbar-brand" href="<?php echo URL; ?>"><span class="glyphicon glyphicon-home"></span> ShopU</a>
-
             </div>
 
             <!-- navbar body -->
