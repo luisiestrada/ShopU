@@ -9,7 +9,6 @@
                 <img src="<?php echo URL; ?>img/shopu-mod.jpg" alt="ShopU logo"/>
             </a>
         </div>
-    </div>
     <!-- navigation bar -->
     <nav class="navbar navbar-default col-md-10">
 
@@ -95,9 +94,9 @@
                 </li>
             </ul>
         </div>
-
+</div>
     </nav>
-    <h4 align = "left">
+    <h4 align = "center">
         ShopU provides consumer-to-consumer sales services exclusively to SFSU students
     </h4>
 </div>
