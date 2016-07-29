@@ -1,3 +1,5 @@
+<p align="center">SFSU/FAU/Fulda Software Engineering Project, Summer 2016. For Demonstration Only.</p>
+
 <div class="container">
 
     <!-- logo -->
