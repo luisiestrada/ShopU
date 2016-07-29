@@ -409,3 +409,17 @@ margin: 0 9px;
 border-left: 1px solid #F2F2F2;
 border-right: 1px solid #FFF;
 }
+
+
+.navbar-nav > li > a {
+    padding-top: 15px !important; 
+    padding-bottom: 10px !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+}
+
+
+.navbar-header {
+   padding-left: 0px !important;
+   padding-right: 0px !important; 
+}
