@@ -9,9 +9,5 @@
     <!-- Bootstrap JS -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     
-    <!-- Footer at the bottom of every page as per specifications -->
-    <p align="center">
-        SFSU/FAU/Fulda Software Engineering Project, Summer 2016. For Demonstration Only.
-    </p>
 </body>
 </html>
