@@ -12,12 +12,17 @@ session_start();
  */
 class Home extends Controller
 {
+    public $categories; // List of all categories for categories
+                        // section in navbar (loaded from db)
+
     /**
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
      */
     public function index()
     {
+        $categories = $this->item_model->getAllCategories();
+        $search = null;
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/_templates/navigation.php';

@@ -12,12 +12,14 @@ session_start();
  */
 class Errors extends Controller
 {
+
     /**
      * PAGE: index
      * This method handles the error page that will be shown when a page is not found
      */
     public function index()
     {
+        $search = null;
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/_templates/navigation.php';

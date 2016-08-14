@@ -1,147 +1,96 @@
 <?php
 
+/**
+ * class RegisteredUser interacts with the Database class
+ */
 class RegisteredUser
 {
-    private $username;
-    private $studentId;
-    private $emailAddress;
-    private $password;
-    private $items;
-    private $profileImage;
+    private $db_model = null;
+    
+    public function __construct()
+    {
+        $this->db_model = new Database();
+    }
     
     /**
-     * RegisteredUser class constructor
-     * @param type $name - the username of the registered user
-     * @param type $id - the id of the registered user
-     * @param type $email - the email address of the registered user
-     * @param type $pwd - the password of the registered user
-     * @param type $itms - the items the registered user is selling (if any)
-     * @param type $image - the profile image of the registered user (if any)
+     * Get a user by their id from database
+     * @param type $userId - the id of the registered user
      */
-    public function __construct($name, $id, $email, $pwd)
+    public function getUser($userId)
     {
-        $username = $name;
-        $studentId = $id;
-        $emailAddress = $email;
-        $password = $pwd;
-        $items = $itms;
-        $profileImage = $image;
+        return $this->db_model->getUser($userId);
+    }
+    
+    /**
+     * Get all users from database
+     */
+    public function getAllUsers()
+    {
+        return $this->db_model->getAllUsers();
+    }
+    
+    /**
+     * Add user to the database
+     */
+    public function addUser($student_id, $username, $email, $password, $image)
+    {
+        $this->db_model->addUser($student_id, $username, $email, $password, $image);
+    }
+    
+    /**
+     * Returns whether or not user exists in the db with given username
+     * @param type $username
+     * @return type boolean
+     */
+    public function userExists($username)
+    {
+        return $this->db_model->userExists($username);
+    }
+    
+    /**
+     * Returns whether or not username/password match a user in the db
+     * @param type $username - username given by user when signing in
+     * @param type $password - password given by user when signing in
+     * @return type boolean - success of matching user with supplied username/password
+     */
+    public function correctCredentials($username, $password)
+    {
+        return $this->db_model->correctCredentials($username, $password);
+    }
+    
+    /**
+     * Returns hashed password in database from a given username
+     * @param type $username
+     * @return - password from db
+     */
+    public function getPasswordFromUsername($username)
+    {
+        return $this->db_model->getPasswordFromUsername($username);
+    }
+    
+    /**
+     * Return a user from their username
+     * @param type $username
+     * @return type user PDO
+     */
+    public function getUserFromUsername($username)
+    {
+        return $this->db_model->getUserFromUsername($username);
+    }
+    
+    /**
+     * Return a username from a user id
+     */
+    public function getUsernameFromUserId($id)
+    {
+        return $this->db_model->getUsernameFromUserId($id);
     }
 
     /**
-     * Set the username
-     * @param type $name - the username of the new registered user
+     * Return an image from a user id
      */
-    public function setUsername($name)
+    public function getImageFromUserId($id)
     {
-        $username = $name;
-    }
-    
-    /**
-     * Get the username
-     */
-    public function getUsername()
-    {
-        return $username;
-    }
-    
-    /**
-     * Get the id of the registered user
-     */
-    public function getId()
-    {
-        return $studentId;
-    }
-
-    /**
-     * Update email address
-     * @param type $email - the new email address
-     */
-    public function updateEmail($email)
-    {
-        $emailAddress = $email;
-    }
-    
-    /**
-     * Get the email address of the registered user
-     */
-    public function getEmail()
-    {
-        return $emailAddress;
-    }
-    
-    /**
-     * Update password
-     * @param type $pwd - the new password
-     */
-    public function updatePassword($pwd)
-    {
-        $password = $pwd;
-    }
-    
-    /**
-     * Get the password of the registered user
-     */
-    public function getPassword()
-    {
-        return $password;
-    }
-    
-    /**
-     * Set the profile image
-     * @param type $image - the profile image filename uploaded by the registered user
-     */
-    public function setProfileImage($image)
-    {
-        $profileImage = $image;
-    }
-    
-    /**
-     * Get the profile image filename
-     */
-    public function getProfileImage()
-    {
-        return $profileImage;
-    }
-    
-    /**
-     * Add an item to registered user’s array of items sell
-     * @param type $itemId - the id of the item on the seller's list
-     */
-    public function addItemIdToSell($itemId)
-    {
-        array_push($items, $itemId);
-    }
-    
-    /**
-     * Remove an item from registered user's array of items to sell
-     * @param type $itemId - the id of the item on the seller's list
-     */
-    public function removeItemIdToSell($itemId)
-    {
-        $index;                 // Index of item to be removed
-        $length = count($items);
-        
-        // Find the item to remove
-        for($i = 0; $i < $length; $i++) 
-        {
-            if ($items[$i] == $itemId)
-            {
-                $index = $i;
-                break;
-            }
-        }
-        
-        // Remove the item and shift the array
-        array_splice($items, $index, 1);
-    }
-    
-    /**
-     * Get an item from registered user's array of items to sell, based on index
-     * @param type $index - the index of the items array holding an item id
-     */
-    public function getItemIdToSell($index)
-    {
-        return items[$index];
+        return $this->db_model->getImageFromUserId($id);
     }
 }

@@ -3,12 +3,20 @@ body {
     font-size: 14px;
 }
 .logo img {
-   height: 100px;
-   margin: 0 auto 10px auto;
+    height: 100px;
+    margin: 0 auto 10px auto;
 }
 .container {
     padding: 10px;
     margin: 5px;
+}
+
+.container2{
+    padding: 10px;
+    margin: 0px;
+  background-color: grey;
+  background-image: linear-gradient(grey, white);
+
 }
 .container a {
     color: #222;
@@ -54,13 +62,13 @@ body {
     padding: 5px 10px;
 }
 .div {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 5px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 .div hr {
-  margin: 7px 0px;
-  width: 35%;
+    margin: 7px 0px;
+    width: 35%;
 }
 .pos-left { float: left; }
 .pos-right { float: right; }
@@ -73,7 +81,7 @@ body {
 }
 #homepage-text {
     position: relative;
-    top: 50%;
+    top: 1%;
     transform: translateY(-50%);
     color: white;
 }
@@ -86,7 +94,7 @@ body {
 
 /* adjust margin for search bar */ 
 .search-navbar {
-  margin-top: 1px;
+    margin-top: 1px;
 }
 
 /* item confirmation */
@@ -177,57 +185,57 @@ html,body,.wrapper{
     margin-top:30px ;
 }
 .login-container input[type=submit] {
-  width: 100%;
-  display: block;
-  margin-bottom: 10px;
-  position: relative;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
 }
 
 .login-container input[type=text], input[type=password] {
-  height: 44px;
-  font-size: 16px;
-  width: 100%;
-  margin-bottom: 10px;
-  -webkit-appearance: none;
-  background: #fff;
-  border: 1px solid #d9d9d9;
-  border-top: 1px solid #c0c0c0;
-  /* border-radius: 2px; */
-  padding: 0 8px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
+    height: 44px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    /* border-radius: 2px; */
+    padding: 0 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 .login-container input[type=text]:hover, input[type=password]:hover {
-  border: 1px solid #b9b9b9;
-  border-top: 1px solid #a0a0a0;
-  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    border: 1px solid #b9b9b9;
+    border-top: 1px solid #a0a0a0;
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .login-container-submit {
-  /* border: 1px solid #3079ed; */
-  border: 0px;
-  color: #fff;
-  text-shadow: 0 1px rgba(0,0,0,0.1); 
-  background-color: #357ebd;/*#4d90fe;*/
-  padding: 17px 0px;
-  font-family: roboto;
-  font-size: 14px;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+    /* border: 1px solid #3079ed; */
+    border: 0px;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.1); 
+    background-color: #357ebd;/*#4d90fe;*/
+    padding: 17px 0px;
+    font-family: roboto;
+    font-size: 14px;
+    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
 .login-container-submit:hover {
-  /* border: 1px solid #2f5bb7; */
-  border: 0px;
-  text-shadow: 0 1px rgba(0,0,0,0.3);
-  background-color: #357ae8;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+    /* border: 1px solid #2f5bb7; */
+    border: 0px;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+    background-color: #357ae8;
+    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
 .login-help{
-  font-size: 12px;
+    font-size: 12px;
 }
 
 .asterix{
@@ -236,65 +244,65 @@ html,body,.wrapper{
 
 /* images*/
 ol, ul {
-  list-style: none;
+    list-style: none;
 }
 .hand {
-  cursor: pointer;
-  cursor: pointer;
+    cursor: pointer;
+    cursor: pointer;
 }
 .cards{
     padding-left:0;
 }
 .cards li {
-  -webkit-transition: all .2s;
-  -moz-transition: all .2s;
-  -ms-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
-  background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
-  background-position: 0 0;
-  float: left;
-  height: 32px;
-  margin-right: 8px;
-  text-indent: -9999px;
-  width: 51px;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+    background-position: 0 0;
+    float: left;
+    height: 32px;
+    margin-right: 8px;
+    text-indent: -9999px;
+    width: 51px;
 }
 .cards .mastercard {
-  background-position: -51px 0;
+    background-position: -51px 0;
 }
 .cards li {
-  -webkit-transition: all .2s;
-  -moz-transition: all .2s;
-  -ms-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
-  background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
-  background-position: 0 0;
-  float: left;
-  height: 32px;
-  margin-right: 8px;
-  text-indent: -9999px;
-  width: 51px;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+    background-position: 0 0;
+    float: left;
+    height: 32px;
+    margin-right: 8px;
+    text-indent: -9999px;
+    width: 51px;
 }
 .cards .amex {
-  background-position: -102px 0;
+    background-position: -102px 0;
 }
 .cards li {
-  -webkit-transition: all .2s;
-  -moz-transition: all .2s;
-  -ms-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
-  background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
-  background-position: 0 0;
-  float: left;
-  height: 32px;
-  margin-right: 8px;
-  text-indent: -9999px;
-  width: 51px;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+    background-position: 0 0;
+    float: left;
+    height: 32px;
+    margin-right: 8px;
+    text-indent: -9999px;
+    width: 51px;
 }
 .cards li:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
 /* images end */
 
@@ -330,7 +338,7 @@ ol, ul {
 }
 .panel-info > .panel-heading {
     color: #eee;
-    
+
     border-color: #999;
 }
 .panel-info > .panel-heading {
@@ -393,7 +401,7 @@ hr{
     .btn-submit-fix{
         width:100%;
     }
-    
+
 }
 /*
 @media only screen and (max-width: 777px){
@@ -403,10 +411,10 @@ hr{
 }*/
 
 .divider-vertical {
-height: 50px;
-margin: 0 9px;
-border-left: 1px solid #F2F2F2;
-border-right: 1px solid #FFF;
+    height: 50px;
+    margin: 0 9px;
+    border-left: 1px solid #F2F2F2;
+    border-right: 1px solid #FFF;
 }
 
 
@@ -419,6 +427,84 @@ border-right: 1px solid #FFF;
 
 
 .navbar-header {
-   padding-left: 0px !important;
-   padding-right: 0px !important; 
+    padding-left: 0px !important;
+    padding-right: 0px !important; 
+}
+
+/*
+item page history back CSS
+*/
+#historyBack{
+    color:red;
+    font-weight: bold;
+    font-size: 17px;
+    text-decoration: underline;
+}
+
+#backlink{
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+/*CSS for input text area like sell an item */
+
+textarea{
+	resize: none;
+}
+
+/* submit buttons */ 
+#submit {
+    color: white !important;
+}
+
+#category {
+    position: relative;
+    
+}
+
+#category button {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    position: absolute !important;
+    height: 200px !important;
+    border: none;
+    background: none;
+}
+
+#Books {
+    left: 24%;
+    width: 200px;
+}
+
+#Clothes {
+    left: 44%;
+    width: 200px;
+}
+
+#Electronics {
+    left: 64%;
+    width: 200px;
+}
+
+#Furniture {
+    left: 24%;
+    width: 200px;
+    top: 220px;
+}
+
+#Transportation {
+    left: 44%;
+    width: 200px;
+    top: 220px;
+}
+
+#Other {
+    left: 64%;
+    width: 200px;
+    top: 220px;
+}
+
+.table-row {
+    cursor: pointer !important;
 }

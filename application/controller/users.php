@@ -7,12 +7,17 @@ session_start();
  */
 class Users extends Controller
 {
+    public $categories; // List of all categories for categories
+                        // section in navbar (loaded from db)
+
     /**
      * Show all users
      */
     public function index()
     {
-        $users = $this->db_model->getAllUsers();
+        $categories = $this->item_model->getAllCategories();
+        $search = null;
+        $users = $this->user_model->getAllUsers();
         require APP . 'view/_templates/header.php';
         require APP . 'view/_templates/navigation.php';
         require APP . 'view/users/index.php';
@@ -25,7 +30,7 @@ class Users extends Controller
      */
     public function signIn()
     {
-        if (empty($_SESSION)) {
+        if (!isset($_SESSION['user_id'])) {
             require APP . 'view/_templates/header.php';
             require APP . 'view/users/signin.php';
             require APP . 'view/_templates/footer.php';
@@ -40,13 +45,23 @@ class Users extends Controller
      */
     public function signUp()
     {
-        if (empty($_SESSION)) {
+        if (!isset($_SESSION['user_id'])) {
             require APP . 'view/_templates/header.php';
             require APP . 'view/users/signup.php';
             require APP . 'view/_templates/footer.php';
         } else {
             header('location: ' . URL . 'home/index');
         }
+    }
+    
+    /** 
+     * Displays Terms and Conditions page
+     */
+    public function displayTerms()
+    {
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/users/termsandconditions.php';
+        require APP . 'view/_templates/footer.php';
     }
     
     /**
@@ -80,31 +95,29 @@ class Users extends Controller
     {
         if (isset($_POST['submit_add_user'])) {
             
-            if ($this->db_model->usernameExists($_POST['username']) == true) {
+            if ($this->user_model->userExists($_POST['username']) == true) {
+                $error = "Username taken!";
                 require APP . 'view/_templates/header.php';
-                echo "Username taken!";
+                require APP . 'view/errors/errorbox.php';
                 require APP . 'view/users/signup.php';
                 require APP . 'view/_templates/footer.php';
                 return;
             }
             
             $file = $_FILES["image"]["tmp_name"]; // reference to file uploaded
+            $image = null; // image null by default
             
             // if false, not an image or no image selected
             if ($file != null && getimagesize($file)) {
-
-                // resize image (destroys original)
                 parent::resizeImage($file);
                 $image = file_get_contents($file);
-
-                // add user to database with image
-                $this->db_model->addUserWithImage($_POST["student_id"], $_POST["username"],
-                        $_POST["email"], $_POST["password"], $image);
-            } else {
-                // add user to database without image (default image used instead)
-                $this->db_model->addUser($_POST["student_id"], $_POST["username"],
-                        $_POST["email"], $_POST["password"]);
             }
+            
+            // encrypt password entered by user with bcrypt algorithm
+            $pass_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+            
+            $this->user_model->addUser($_POST["student_id"], $_POST["username"],
+                        $_POST["email"], $pass_hash, $image);
             
             Users::signInUser(); // sign in after user is added to db
             
@@ -123,19 +136,22 @@ class Users extends Controller
             $username = $_POST['username'];
             $password = $_POST['password'];
             
-            $correctCredentials = $this->db_model->isCorrectCredentials($username, $password);
+            $correctCredentials = $this->user_model->correctCredentials($username, $password);
             
             if ($correctCredentials === false) { // reload signin page with error message
+                $error = "Incorrect username/password!";
                 require APP . 'view/_templates/header.php';
-                echo "Incorrect username/password!";
+                require APP . 'view/errors/errorbox.php';
                 require APP . 'view/users/signin.php';
                 require APP . 'view/_templates/footer.php';
             } else { // start session
-                $user = $this->db_model->getUserFromUsername($username);
+                $user = $this->user_model->getUserFromUsername($username);
                 $_SESSION['user_id'] = $user->id;
                 $_SESSION['username'] = $user->username;
                 $_SESSION['email'] = $user->email;
-                header('location: ' . URL . 'home/index'); // go to homepage
+                
+                // return to page you were before
+                echo "<script>window.history.go(-2);</script>";
             }
             
         } else {
@@ -143,5 +159,4 @@ class Users extends Controller
             header('location: ' . URL . 'home/index');
         }
     }
-
 }

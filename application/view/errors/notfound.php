@@ -5,10 +5,11 @@
             echo("<script>$('#category').val('$category');</script>");
             echo("<script>$('select.resizeselect').resizeselect()</script>");
         }
-    }
-?>
+    } ?>
 
 <!-- main content -->
 <div class="container">
     <h3>Your search '<?php echo($input); ?>' did not match any products.</h3>
+    <br>
+    <a href="javascript://" onclick="goBack();">Go Back</a>
 </div>

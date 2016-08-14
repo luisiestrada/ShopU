@@ -1,145 +1,121 @@
 <?php
 
+require APP . 'model/database.php';
+
+/**
+ * class Item interacts with the Database class
+ */
 class Item
-{
-    private $itemName;
-    private $itemId;
-    private $sellerId;
-    private $price;
-    private $category;
-    private $details;
-    private $itemImages;
-    
+{   
     /**
-     * Item class constructor
-     * @param type $name - the name of the item
-     * @param type $id - the id of the item
-     * @param type $seller - the id of the registered user selling the item
-     * @param type $pr - the price of the item
-     * @param type $cat - the category the item belongs to
-     * @param type $dt - the details of the item as specified by the seller
-     * @param type $imgs - the images array of the images representing the item
+     * connection to the Database class
+     * @var type connection to the Database class
      */
-    public function __construct($name, $id, $seller, $pr, $cat, $dt, $imgs)
+    private $db_model = null;
+    
+    function __construct()
     {
-        $itemName = $name;
-        $itemId = $id;
-        $sellerId = $seller;
-        $price = $pr;
-        $category = $cat;
-        $details = $dt;
-        $itemImages = $imgs;
+        $this->db_model = new Database();
     }
     
     /**
-     * Set the item name
-     * @param type $name - the name of the item
+     * Get an item by its id
      */
-    public function setItemName($name)
+    public function getItem($item_id)
     {
-        $itemName = $name;
+        return $this->db_model->getItem($item_id);
     }
     
     /**
-     * Get the item name
+     * Get all items from database (no category)
      */
-    public function getItemName()
+    public function getAllItems($items_per_page, $range)
     {
-        return $itemName;
+        return $this->db_model->getAllItems($items_per_page, $range);
     }
     
     /**
-     * Get the item id
+     * Get amount of items in the database
      */
-    public function getItemId()
+    public function getAmountOfItems()
     {
-        return $itemId;
+        return $this->db_model->getAmountOfItems();
     }
     
     /**
-     * Get the item's seller id
+     * Get all items containing a certain keyword
+     * @param type $value - the keyword user searched for
      */
-    public function getSellerId()
+    public function getItemsContaining($value, $category, $items_per_page, $range)
     {
-        return $sellerId;
+        return $this->db_model->getItemsContaining($value, $category, $items_per_page, $range);
     }
     
     /**
-     * Set the item's price
-     * @param type $pr - the price of the item in dollars
+     * Get amount of items containing a certain keyword
+     * @param type $value - the keyword user searched for
      */
-    public function setPrice($pr)
+    public function getAmountOfItemsContaining($value, $category)
     {
-        $price = $pr;
+        return $this->db_model->getAmountOfItemsContaining($value, $category);
     }
     
     /**
-     * Get the item's price
+     * Get all items from database in a certain category
      */
-    public function getPrice()
+    public function getAllItemsFromCategory($category, $items_per_page, $range)
     {
-        return $price;
+        return $this->db_model->getAllItemsFromCategory($category, $items_per_page, $range);
     }
     
     /**
-     * Set the item details
-     * @param type $dt - the item's details as specified by the seller
+     * Get amount of items from database in a certain category
      */
-    public function setDetails($dt)
+    public function getAmountOfItemsFromCategory($category)
     {
-        $details = $dt;
+        return $this->db_model->getAmountOfItemsFromCategory($category);
     }
     
     /**
-     * Get the item details
+     * Add item to the database
      */
-    public function getDetails()
+    public function addItem($title, $seller_id, $price, $category, $description, $keywords, $image)
     {
-        return $details;
+        $this->db_model->addItem($title, $seller_id, $price, $category, $description, $keywords, $image);
+    }
+    
+    //////////////////////////////// CATEGORIES ////////////////////////////////
+    
+    /**
+     * Get all categories from database
+     */
+    public function getAllCategories()
+    {
+        return $this->db_model->getAllCategories();
     }
     
     /**
-     * Set the item's category
-     * @param type $cat - the category the item belongs in as specified by the seller
+     * Get a specified category from the database by key
+     * @param type $categoryId - the id or key of the category
+     *                           1 - Books
+     *                           2 - Clothes
+     *                           3 - Electronics
+     *                           4 - Furniture
+     *                           5 - Transportation
+     *                          99 - Other
      */
-    public function setCategory($cat)
+    public function getCategory($categoryId)
     {
-        $category = $cat;
+        return $this->db_model->getCategory($categoryId);
     }
     
     /**
-     * Get the item's category
+     * Get a category's key from the database; 
+     * returns -1 if category not found
+     * @param type $category - the text category whose key is to be returned
      */
-    public function getCategory()
+    public function getCategoryKey($category)
     {
-        return $category;
-    }
-    
-    /**
-     * Set one of the item's 3 images
-     * @param type $index - the index of the image to add/replace
-     * @param type $image - the image filename of the image to add/repace
-     */
-    public function setImage($index, $image)
-    {
-        $itemImages[$index] = $image;
-    }
-    
-    /**
-     * Get one of the item's 3 images
-     * @param type $index - the index of the image to get
-     */
-    public function getImage($index)
-    {
-        return $itemImages[$index];
-    }
-    
-    /**
-     * Remove one of the item's 3 images
-     * @param type $index - the index of the image to remove
-     */
-    public function removeImage($index)
-    {
-        $itemImages[$index] = "";
+        return $this->db_model->getCategoryKey($category);
     }
 }
