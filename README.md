@@ -5,13 +5,13 @@
 SFSU/FAU/Fulda Software Engineering Project, Summer 2016. For Demonstration
 Only.
 
-ShopU is an electronic commerce website that provides consumer-to-consumer 
+ShopU is a mock electronic commerce website that provides consumer-to-consumer 
 sales services exclusively to students attending San Francisco State University.
-
-<hr>
 
 View the documentation
 [here](https://drive.google.com/open?id=0B55GKCB0LxY4RjRCMXhnNUdPb0k).
+
+<hr>
 
 Technologies used:
 * LAMP stack
