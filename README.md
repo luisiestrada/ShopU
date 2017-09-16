@@ -2,11 +2,13 @@
 
 ## SFSU CSC 648/848 project
 
-SFSU/FAU/Fulda Software Engineering Project, Summer 2016. For Demonstration
-Only.
-
-ShopU is a mock electronic commerce website that provides consumer-to-consumer 
+ShopU is a mock electronic commerce website that provides consumer-to-consumer
 sales services exclusively to students attending San Francisco State University.
+
+Note: This project was initially hosted on the class server but has since been
+taken down. I'm currently in the process of deploying it back to AWS. Click
+[here](http://shopu-env.bzwc52z8ia.us-west-2.elasticbeanstalk.com/) to see it.
+
 
 View the documentation
 [here](https://drive.google.com/open?id=0B55GKCB0LxY4RjRCMXhnNUdPb0k).
