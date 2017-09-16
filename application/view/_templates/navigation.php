@@ -1,5 +1,3 @@
-<p align="center">SFSU/FAU/Fulda Software Engineering Project, Summer 2016. For Demonstration Only.</p>
-
 <div class="container2">
 
     <!-- logo -->
@@ -31,7 +29,7 @@
                         <span class="input-group-btn">
                             <select name="category" id="category" class="btn btn-warning btn-lg resizeselect">
                                 <option value="All">All</option>
-                                <?php foreach ($categories as $cat) { ?> 
+                                <?php foreach ($categories as $cat) { ?>
                                     <option value="<?php echo $cat->category; ?>"><?php echo $cat->category; ?>&emsp;&nbsp;</option>
                                 <?php } ?>
                             </select>
@@ -60,7 +58,7 @@
 
             <!-- navbar body -->
             <div class="collapse navbar-collapse" id="myNavbar">
-            
+
                 <!-- navbar links to the right -->
                 <ul class="nav navbar-nav navbar-right">
                     <li class="divider-vertical"></li>
@@ -97,7 +95,7 @@
                 </ul>
             </div>
         </nav>
-        <h4 align = "left">ShopU provides consumer-to-consumer sales services exclusively to SFSU students</h4>
+        <h4 align = "left">ShopU provides consumer-to-consumer sales services exclusively to SFSU students.</h4>
     </div>
 </div>
 
@@ -133,10 +131,9 @@ http://stackoverflow.com/questions/20091481/auto-resizing-the-select-element-acc
         $("select.resizeselect").resizeselect();
 
     })(jQuery, window);
-    
+
     // apply tooltip to sell item button (and buy buttons if on the screen)
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
     });
 </script>
-
