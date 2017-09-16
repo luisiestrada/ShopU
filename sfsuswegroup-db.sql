@@ -30,6 +30,14 @@ CREATE TABLE `item` (
   FOREIGN KEY (`category`) REFERENCES `categories` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+INSERT INTO categories (`id`, `category`) VALUES
+  (1, ‘Books’),
+  (2, ‘Clothes’),
+  (3, ‘Electronics’),
+  (4, ‘Furniture’),
+  (5, ‘Transportation’),
+  (99, ‘Other’);
+
 INSERT INTO item (`id`,`title`,`seller_id`,`price`,`category`,`description`,`keywords`) VALUES
 (1,'Harry Potter and the Prisoner of Azkaban',1,35.0,1,'Part of J.K. Rowlings critically-acclaimed series. Made into the motion picture.','harry, potter, critically, acclaimed, series'),
 (2,'Harry Potter and the Sorcerer''s Stone',1,35.0,1,'Part of J.K. Rowlings critically-acclaimed series. Made into the motion picture.','harry, potter, critically, acclaimed, series'),
@@ -99,4 +107,3 @@ INSERT INTO item (`id`,`title`,`seller_id`,`price`,`category`,`description`,`key
 (66,'6 Baked cookies',1,5.0,99,'6 homebaked cookies with chocolate chips','Cookies, Homebaked, Homemade'),
 (67,'Homemade pasta',1,5.0,99,'Homemade spaghetti with meatballs','Pasta, Homemade'),
 (68,'Grilled Cheese Sandwich',1,3.0,99,'Homemade grilled cheese sandwich with your choice of bacon, ham, chicken, or tomatoes','Grilled Cheese Sandwich');
-
