@@ -31,12 +31,12 @@ CREATE TABLE `item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO categories (`id`, `category`) VALUES
-  (1, ‘Books’),
-  (2, ‘Clothes’),
-  (3, ‘Electronics’),
-  (4, ‘Furniture’),
-  (5, ‘Transportation’),
-  (99, ‘Other’);
+  (1, 'Books'),
+  (2, 'Clothes'),
+  (3, 'Electronics'),
+  (4, 'Furniture'),
+  (5, 'Transportation'),
+  (99, 'Other');
 
 INSERT INTO item (`id`,`title`,`seller_id`,`price`,`category`,`description`,`keywords`) VALUES
 (1,'Harry Potter and the Prisoner of Azkaban',1,35.0,1,'Part of J.K. Rowlings critically-acclaimed series. Made into the motion picture.','harry, potter, critically, acclaimed, series'),
