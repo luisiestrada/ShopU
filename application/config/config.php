@@ -51,8 +51,8 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
  * This is the place where you define your database credentials, database type etc.
  */
 define('DB_TYPE', 'mysql');
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'su16g03');
-define('DB_USER', 'su16g03');
-define('DB_PASS', 'hodor');
+define('DB_HOST', 'shopu.cb2txogjfjhx.us-west-2.rds.amazonaws.com');
+define('DB_NAME', 'shopu');
+define('DB_USER', 'lierluis');
+define('DB_PASS', 'password');
 define('DB_CHARSET', 'utf8');
