@@ -1,4 +1,6 @@
-CREATE TABLE `users` (
+CREATE DATABASE IF NOT EXISTS `shopu`;
+
+CREATE TABLE `shopu`.`users` (
   `id` INT AUTO_INCREMENT,
   `student_id` VARCHAR(9),
   `username` VARCHAR(30),
@@ -9,14 +11,14 @@ CREATE TABLE `users` (
   UNIQUE KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `categories` (
+CREATE TABLE `shopu`.`categories` (
   `id` INT,
   `category` VARCHAR(25),
   `image` MEDIUMBLOB,
   PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `item` (
+CREATE TABLE `shopu`.`item` (
   `id` INT AUTO_INCREMENT,
   `title` TEXT,
   `seller_id` INT,
@@ -30,7 +32,7 @@ CREATE TABLE `item` (
   FOREIGN KEY (`category`) REFERENCES `categories` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO categories (`id`, `category`) VALUES
+INSERT INTO `shopu`.`categories` (`id`, `category`) VALUES
   (1, 'Books'),
   (2, 'Clothes'),
   (3, 'Electronics'),
@@ -38,7 +40,7 @@ INSERT INTO categories (`id`, `category`) VALUES
   (5, 'Transportation'),
   (99, 'Other');
 
-INSERT INTO item (`id`,`title`,`seller_id`,`price`,`category`,`description`,`keywords`) VALUES
+INSERT INTO `shopu`.`item` (`id`,`title`,`seller_id`,`price`,`category`,`description`,`keywords`) VALUES
 (1,'Harry Potter and the Prisoner of Azkaban',1,35.0,1,'Part of J.K. Rowlings critically-acclaimed series. Made into the motion picture.','harry, potter, critically, acclaimed, series'),
 (2,'Harry Potter and the Sorcerer''s Stone',1,35.0,1,'Part of J.K. Rowlings critically-acclaimed series. Made into the motion picture.','harry, potter, critically, acclaimed, series'),
 (3,'Harry Potter and the Order of the Phoenix',1,45.0,1,'Part of J.K. Rowlings critically-acclaimed series. Made into the motion picture.','harry, potter, critically, acclaimed, series'),
