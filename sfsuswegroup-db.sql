@@ -40,6 +40,9 @@ INSERT INTO `shopu`.`categories` (`id`, `category`) VALUES
   (5, 'Transportation'),
   (99, 'Other');
 
+INSERT INTO `shopu`.`users` (`student_id`, `username`, `email`, `password`) VALUES
+('123456789', 'foobar', 'foobar@sfsu.edu', 'password');
+
 INSERT INTO `shopu`.`item` (`id`,`title`,`seller_id`,`price`,`category`,`description`,`keywords`) VALUES
 (1,'Harry Potter and the Prisoner of Azkaban',1,35.0,1,'Part of J.K. Rowlings critically-acclaimed series. Made into the motion picture.','harry, potter, critically, acclaimed, series'),
 (2,'Harry Potter and the Sorcerer''s Stone',1,35.0,1,'Part of J.K. Rowlings critically-acclaimed series. Made into the motion picture.','harry, potter, critically, acclaimed, series'),
