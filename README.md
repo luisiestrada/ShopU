@@ -24,11 +24,12 @@ with dummy data.
 <hr>
 
 Technologies used:
-* LAMP stack
-* [MINI](https://github.com/panique/mini)
-* [Bootstrap](https://getbootstrap.com)
-* [DataTables](https://datatables.net)
-* [jQuery Validation](https://jqueryvalidation.org)
+* LAMP stack (Linux, Apache, MySQL, PHP)
+* [MINI]: PHP MVC microframework
+* [Bootstrap]
+* AWS (EB, RDS)
+* Tools: [Netbeans], [PuTTY], [MySQL Workbench]
+* jQuery plugins: [DataTables], [jQuery Validation]
 
 Browser Version Support:
 * Internet Explorer (IE11, IE10)
@@ -36,3 +37,13 @@ Browser Version Support:
 * Mozilla Firefox (47.0, 45.2.0esr)
 * Safari (9.1, 8.0.8)
 * Opera (37, 36)
+
+<!-- links -->
+
+[MINI]: https://github.com/panique/mini
+[Bootstrap]: https://getbootstrap.com
+[DataTables]: https://datatables.net
+[jQUery Validation]: https://jqueryvalidation.org
+[Netbeans]: https://netbeans.org/
+[PuTTY]: http://www.putty.org/
+[MySQL Workbench]: https://www.mysql.com/products/workbench/
