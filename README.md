@@ -19,7 +19,7 @@ with dummy data.
 ### Technologies used:
 * LAMP stack (Linux, Apache, MySQL, PHP), HTML, CSS, JavaScript
 * Frameworks/Libraries: [MINI], Bootstrap, jQuery
-* Tools: Netbeans, MySQL Workbench, PuTTY, AWS (EC2, EB, RDS), Git, Gitlab
+* Tools: Netbeans, MySQL Workbench, PuTTY, AWS (EC2, EB, RDS), Git, Gitlab, Google Analytics
 * jQuery plugins: [DataTables], [jQuery Validation]
 
 ### Project details
